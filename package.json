@@ -16,10 +16,10 @@
       "@babel/plugin-proposal-class-properties": "^7.4.4",
       "@babel/preset-env": "^7.4.5",
       "@babel/preset-react": "^7.0.0",
-      "@storybook/addon-knobs": "^5.1.3",
-      "@storybook/addon-links": "^5.1.10",
-      "@storybook/addon-notes": "^5.1.3",
-      "@storybook/react": "^5.1.3",
+      "@storybook/addon-controls": "^6.5.15",
+      "@storybook/addon-links": "^6.5.15",
+      "@storybook/addon-notes": "^5.3.21",
+      "@storybook/react": "^6.5.15",
       "babel-eslint": "^10.0.3",
       "babel-loader": "^8.0.6",
       "core-js": "^3.1.3",
@@ -37,6 +37,7 @@
       "postcss-modules": "^1.4.1",
       "prettier": "^1.18.2",
       "storybook-addon-jsx": "^7.1.2",
+      "storybook-addon-react-router-v6": "^0.2.1",
       "style-loader": "^0.23.1"
     },
     "dependencies": {
@@ -48,6 +49,9 @@
       "prop-types": "^15.7.2",
       "react": "^16.8.6",
       "react-dom": "^16.8.6",
+      "react-bootstrap": "^2.1.2",
+      "react-bootstrap-icons": "^1.10.2",
+      "react-router-dom": "^6.2.1",
       "react-syntax-highlighter": "^10.3.0",
       "recompose": "^0.30.0"
     },
