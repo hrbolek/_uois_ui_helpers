@@ -11,7 +11,7 @@ module.exports = {
     ],
 
     addons: [
-        '@storybook/addon-essentials',
+        //'@storybook/addon-essentials',
         "storybook-addon-react-router-v6"
     ],
 
@@ -19,7 +19,7 @@ module.exports = {
         // Update your babel configuration here
         ...options,
       }),
-      
+
     framework: '@storybook/react',
 
     webpackFinal: async (config, { configType }) => {
