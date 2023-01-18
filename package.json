@@ -1,4 +1,8 @@
 {
+    "name": "uois_helpers",
+    "version": "0.1.0",
+    "private": true,
+  
     "scripts": {
       "storybook": "start-storybook",
       "build-storybook": "build-storybook -c .storybook -o .dist",
