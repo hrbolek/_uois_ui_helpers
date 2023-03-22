@@ -3,17 +3,17 @@ import React, { Component } from 'react';
 import { Router } from 'react-router-dom'
 import { withRouter } from 'storybook-addon-react-router-v6';
 
-import { GroupLink, UserLink } from '../components/Links';
-import { SingleGroup, SingleUser } from './DataStructures';
-//import {  } from 'bootstrap-icons';
+import { GroupMembersCard } from '../components/GroupMembersCard';
+import { SingleGroup } from './DataStructures';
 
 export default {
   /* 👇 The title prop is optional.
   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
   * to learn how to generate automatic titles
   */
-  title: 'Links',
-  component: GroupLinkDefault,
+  title: 'Group visualizations',
+  component: GroupMembersAsCard,
+  //tags: ['autodocs'], // enable automatic documentation page  
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -23,5 +23,5 @@ export default {
   }
 };
 
-export const GroupLinkDefault = () => <GroupLink group={SingleGroup} />;
-export const Group = () => <><GroupLink group={SingleGroup} /><br/><UserLink user={SingleUser}/></>;
+    
+export const GroupMembersAsCard = () => <GroupMembersCard  group={SingleGroup}  />;

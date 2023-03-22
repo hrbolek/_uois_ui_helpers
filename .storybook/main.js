@@ -12,7 +12,9 @@ module.exports = {
 
     addons: [
         //'@storybook/addon-essentials',
-        "storybook-addon-react-router-v6"
+        "storybook-addon-react-router-v6",
+        '@storybook/addon-coverage',
+        '@storybook/addon-docs'
     ],
 
     babel: async (options) => ({
