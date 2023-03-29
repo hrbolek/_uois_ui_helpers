@@ -13,7 +13,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Links',
-  component: GroupLinkDefault,
+  component: GroupLink,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -23,5 +23,9 @@ export default {
   }
 };
 
-export const GroupLinkDefault = () => <GroupLink group={SingleGroup} />;
-export const Group = () => <><GroupLink group={SingleGroup} /><br/><UserLink user={SingleUser}/></>;
+export const GroupLinkDefault = {
+  render: (args) => <GroupLink {...args}/>,
+  args: {
+    group: SingleGroup,
+  }  
+}

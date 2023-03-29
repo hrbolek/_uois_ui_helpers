@@ -13,7 +13,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Links',
-  component: UserLinkDefault,
+  component: UserLink,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -23,5 +23,12 @@ export default {
   }
 };
 
-export const UserLinkDefault = () => <UserLink user={SingleUser} />;
-export const UserLinkWithEmail = () => <UserLink user={SingleUser} email/>;
+export const UserLinkDefault = {
+  render: (args) => <UserLink user={args} />,
+  args: SingleUser
+}
+
+export const UserLinkWithEmail = {
+  render: (args) => <UserLink user={args} email/>,
+  args: SingleUser
+}

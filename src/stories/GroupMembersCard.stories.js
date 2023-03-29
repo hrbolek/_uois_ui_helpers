@@ -12,7 +12,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Group visualizations',
-  component: GroupMembersAsCard,
+  component: GroupMembersCard,
   //tags: ['autodocs'], // enable automatic documentation page  
   decorators: [withRouter],
   parameters: {
@@ -23,5 +23,9 @@ export default {
   }
 };
 
-    
-export const GroupMembersAsCard = () => <GroupMembersCard  group={SingleGroup}  />;
+export const GroupMembersAsCard = {
+  render: (args) => <GroupMembersCard {...args}/>,
+  args: {
+    group: SingleGroup,
+  }  
+}

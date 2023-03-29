@@ -12,7 +12,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Group visualizations',
-  component: GroupWithRolesAsTable,
+  component: GroupRolesTable,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -22,5 +22,9 @@ export default {
   }
 };
 
-    
-export const GroupWithRolesAsTable = () => <GroupRolesTable  group={SingleGroup} />;
+export const GroupWithRolesAsTable = {
+  render: (args) => <GroupRolesTable {...args}/>,
+  args: {
+    group: SingleGroup,
+  }  
+}

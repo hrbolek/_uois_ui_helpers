@@ -1,33 +1,47 @@
 module.exports = {
-    stories: [
-      {
-        // 👇 The directory field sets the directory your stories
-        directory: '../src/stories',
-        // 👇 The titlePrefix field will generate automatic titles for your stories
-        titlePrefix: 'MyComponents',
-        // 👇 Storybook will load all files that contain the stories extension
-        files: '*.stories.*',
-      },
-    ],
-
-    addons: [
-        //'@storybook/addon-essentials',
-        "storybook-addon-react-router-v6",
-        '@storybook/addon-coverage',
-        '@storybook/addon-docs'
-    ],
-
-    babel: async (options) => ({
-        // Update your babel configuration here
-        ...options,
-      }),
-
-    framework: '@storybook/react',
-
-    webpackFinal: async (config, { configType }) => {
-        // Make whatever fine-grained changes you need
-        // Return the altered config
-        return config;
-      },
-
-  };
+  stories: [{
+    directory: "../src/stories",
+    titlePrefix: "MyComponents",
+    files: "*.@(mdx|stories.*)"
+  }],
+  addons: [
+  //'@storybook/addon-essentials',
+  "storybook-addon-react-router-v6", 
+  //'@storybook/addon-coverage',
+  //'@storybook/addon-docs',
+  //'@storybook/addon-controls',
+  //'@storybook/addon-toolbars',
+  //"@storybook/addon-mdx-gfm",
+  
+  {
+    name: '@storybook/addon-essentials',
+    options: {
+      docs: false,
+      background: false,
+      actions: false,
+      controls: true,
+    },
+  },
+],
+  babel: async options => ({
+    // Update your babel configuration here
+    ...options
+  }),
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
+  },
+  webpackFinal: async (config, {
+    configType
+  }) => {
+    // Make whatever fine-grained changes you need
+    // Return the altered config
+    return config;
+  },
+  features: {
+    postcss: false
+  },
+  docs: {
+    autodocs: true
+  }
+};
