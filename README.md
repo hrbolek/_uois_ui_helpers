@@ -1,6 +1,6 @@
 # _uois_ui_helpers
 
-Story book usage demonstrations
+Story book usage demo
 
 https://storybook.js.org/docs/react/writing-tests/test-coverage
 
