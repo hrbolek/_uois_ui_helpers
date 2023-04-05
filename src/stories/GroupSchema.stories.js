@@ -13,7 +13,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Group visualizations / Special',
-  component: GroupWithSchema,
+  component: GroupSchema,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -23,18 +23,21 @@ export default {
   }
 };
 
-//export const GroupLinkDefault = () => <GroupLink group={SingleGroup} />;
-
-
 const colormapper = (group) => {
     if (group.grouptype?.id === "cd49e152-610c-11ed-9f29-001a7dda7110") {
       return "#ffb3b3"
     } else {
       return "#ffffff"
     }
-
 }
 
-const validator = (group) => true
+const validator = (group) => true;
 
-export const GroupWithSchema = () => <GroupSchema group={SingleGroup} validator={validator} colormapper={colormapper}/>;
+export const GroupWithSchema = {
+  render: (args) => <GroupSchema {...args}/>,
+  args: {
+    group: SingleGroup,
+    validator: validator,
+    colormapper: colormapper
+  }  
+}

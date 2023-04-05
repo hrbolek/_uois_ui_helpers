@@ -13,7 +13,7 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'Group visualizations',
-  component: GroupWithRolesAsCard,
+  component: GroupRoles,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
@@ -23,4 +23,9 @@ export default {
   }
 };
     
-export const GroupWithRolesAsCard = () => <GroupRoles group={SingleGroup} />;
+export const GroupWithRolesAsCard = {
+  render: (args) => <GroupRoles {...args}/>,
+  args: {
+    group: SingleGroup,
+  }  
+}

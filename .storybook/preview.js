@@ -5,3 +5,5 @@
 //import 'boo'
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.css'
+
+export const argTypes = { name: { control: {type: 'text' }}};
