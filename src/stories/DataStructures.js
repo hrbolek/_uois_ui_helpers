@@ -399,3 +399,26 @@ export const SingleUser = {
       }
     ]
 }
+
+
+
+export const Assignments = {
+    "id": 1,
+    "subject": "Matika",
+    "name": "vektory",
+    "points": 10,
+    "deadline": "23.69.1111",
+    "description": "Nasobeni a scitani vektoru"
+}
+
+export const Students = {
+    "all": [ 
+        {
+            "id": 123,
+            "firstname": "Petr",
+            "surname": "Vomacka",
+            "study_group": "22-5KB",
+            "assignemnts": [1]
+        }
+    ]
+}
