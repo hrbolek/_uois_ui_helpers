@@ -21,64 +21,29 @@
     <div class="  bg-primary text-white text-center">
         <h1>Presences</h1>
     </div>
-    
-    <div class="container mt-5">
-        <div id="root"></div>
-    </div>
 
-    <script type="text/babel">
+     <select class="form-select" aria-label="Default select example">
+  <option selected>Student</option>
+  <option value="1">Adam</option>
+  <option value="2">Eva</option>
+  <option value="3">Robert</option>
+</select>
 
-        const Teacher = (props) => {
-            const {teacher} = props
-            return (
-                <div>
-                    {teacher.name}, {teacher.surname}
-                </div>)
-        }
+<select class="form-select" aria-label="Default select example">
+    <option selected>Učební skupina</option>
+    <option value="1">22-5KB</option>
+    <option value="2">22-5KB-C</option>
+    <option value="3">23-5KB</option>
+  </select>
 
-        const Student = (props) => {
-            const {student} = props
-            return (
-                <div>
-                    {student.id}, {student.name}, {student.surname}
-                </div>
-            )
-        }
-        const Students = (props) => {
-            const {students} = props
-            return (
-                <div>
-                    {students.map(student => <Student key={student.id} student={student} />)}
-                </div>
-            )
-        }
-        const MyApp = (props) => {
-            return (
-                <div>
-                    <Teacher teacher={props.data.teacher}/>
-                    <hr />
-                    <Students students={props.data.students}/>
-                </div>
-            )
-        }
+  <button type="button" class="btn btn-primary"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  Vybrat
+</button>
+   
+   
 
-        const data = {
-            teacher: {
-                name: 'Alexandr',
-                surname: "Štefek"
-            },
-            students: [
-                {'id': 1, name: "John", surname: "Newbie"},
-                {'id': 2, name: "Julia", surname: "Sun"},
-                {'id': 3, name: "Peter", surname: "Walker"},
-            ]
-        }
-
-        const container = document.getElementById('root');
-        const root = ReactDOM.createRoot(container);
-        root.render(<MyApp data={data}/>);
-
-    </script>
+   
 
 </body>
 </html>
