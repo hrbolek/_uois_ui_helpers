@@ -14,15 +14,18 @@ export default {
   * to learn how to generate automatic titles
   */
   title: 'User visualizations',
-  component: UserWithRoles,
+  component: UserRoles,
   decorators: [withRouter],
   parameters: {
     reactRouter: {
       routePath: '/ui/groups/:id',
       routeParams: { 'id': '9a037b9e-973a-11ed-a8fc-0242ac120002' },
     }
-  }
+  },
 };
 
     
-export const UserWithRoles = () => <UserRoles user={SingleUser} />;
+export const UserWithRoles = {
+    render: (args) => <UserRoles user={args} />,
+    args: SingleUser
+}
