@@ -1,5 +1,5 @@
-import { StudentsCard} from "../components/StudentsCard";
-import { SingleUser } from "./DataStructures";
+import { StudentsCard } from "../components/StudentsCard";
+import { Students } from "./DataStructures";
 
 
 export default {
@@ -9,6 +9,8 @@ export default {
 }
 
 export const StudentsCardStory = {
-    render: (args) => <StudentsCard{...args}/>,
-    args : SingleUser
+    render: (args) => <StudentsCard {...args}/>,
+    args : {
+        student: Students.all[0]
+    }
 }
