@@ -403,12 +403,38 @@ export const SingleUser = {
 
 
 export const Assignments = {
-    "id": 1,
-    "subject": "Matika",
-    "name": "vektory",
-    "points": 10,
-    "deadline": "23.69.1111",
-    "description": "Nasobeni a scitani vektoru"
+    "all" : [
+        {
+            "id": 1,
+            "subject": "Matika",
+            "name": "vektory",
+            "points": 0,
+            "deadline": "1975-12-03",
+            "description": "Ze sbirky vypočítejte příklady 25 a 27",
+            "study_groups": [45],
+            "link": "https://www.google.com/"
+        },
+        {
+            "id": 2,
+            "subject": "Informatika",
+            "name": "komponenta fialová",
+            "points": 30,
+            "deadline": "2025-03-30",
+            "description": "Vytvořte komponentu, která bude mít fialové písmo",
+            "study_groups": [45],
+            "link": "https://www.google.com/"
+        }
+    ]
+}
+
+export const StudyGroups = {
+    "all": [
+        {
+            "id": 45,
+            "name": "22-5KB",
+            "assignments": [1, 2]
+        }
+    ]
 }
 
 export const Students = {
@@ -418,70 +444,70 @@ export const Students = {
             "firstname": "Petr",
             "surname": "Vomacka",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 3218,
             "firstname": "Aleš",
             "surname": "Novák",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 3331,
             "firstname": "Lucie",
             "surname": "Kovářová",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 2219,
             "firstname": "Dominik",
             "surname": "Sandra",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 2136,
             "firstname": "Karel",
             "surname": "Studený",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 1114,
             "firstname": "Kristýna",
             "surname": "Bílá",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 2238,
             "firstname": "Lukáš",
             "surname": "Modrý",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 3338,
             "firstname": "Adam",
             "surname": "Marek",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 1243,
             "firstname": "Jan",
             "surname": "",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         },
         {
             "id": 1235,
             "firstname": "Olivie",
             "surname": "Vostrá",
             "study_group": "22-5KB",
-            "assignemnts": [1]
+            "assignments": [1]
         }]
 }
 
