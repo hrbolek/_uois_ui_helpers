@@ -11,12 +11,11 @@ export default {
 }
 
 
-export const ShowButtonStory = {
+export const ShowButtonStudentsCardStory = {
     render: (args) => <ShowButton {...args}/>,
     args: {
         hideMessage: "Zobrazit úkoly",
         showMessage: "Skrýt úkoly",
         component: <StudentsCard student={Students.all[0]}/>
-        //component: <MultipleCards array={Assignments.all}/>
     }
 }

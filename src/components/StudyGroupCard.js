@@ -13,17 +13,14 @@ const textStyle = {
 
  }
 
-
 export const StudyGroupCard = ({name, id}) => {
     const assignments = assignmentsFromGroup(id)
     
-
     const button_args = {
         hideMessage: "Zobrazit úkoly",
         showMessage: "Skrýt úkoly",
         component: <MultipleCards array={assignments}/>
     }
-
 
     return (
         <Card border="info" style={{textAlign:"center" }}>
