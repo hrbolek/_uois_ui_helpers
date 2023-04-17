@@ -14,8 +14,8 @@ export default {
 export const ShowButtonStudentsCardStory = {
     render: (args) => <ShowButton {...args}/>,
     args: {
-        hideMessage: "Zobrazit úkoly",
-        showMessage: "Skrýt úkoly",
+        hideMessage: "Zobrazit studenta",
+        showMessage: "Skrýt studenta",
         component: <StudentsCard student={Students.all[0]}/>
     }
 }
