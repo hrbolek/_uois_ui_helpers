@@ -5,7 +5,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 
 export const StudentsCard = ({student}) => {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card bg= "primary" border= "primary" style={{ width: '18rem' }}>
       <Card.Header>Student</Card.Header>
       <ListGroup variant="flush">
         <ListGroup.Item>Jméno: {student.firstname}</ListGroup.Item>
