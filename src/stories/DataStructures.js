@@ -444,7 +444,7 @@ export const Students = {
             "firstname": "Petr",
             "surname": "Vomacka",
             "study_group": "22-5KB",
-            "assignments": [1]
+            "assignments": [1, 2]
         },
         {
             "id": 3218,

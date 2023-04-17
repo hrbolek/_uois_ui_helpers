@@ -18,7 +18,7 @@ export const StudyGroupCard = ({name, id}) => {
     const assignments = assignmentsFromGroup(id)
     
 
-    const args = {
+    const button_args = {
         hideMessage: "Zobrazit úkoly",
         showMessage: "Skrýt úkoly",
         component: <MultipleCards array={assignments}/>
@@ -37,7 +37,7 @@ export const StudyGroupCard = ({name, id}) => {
                 </Card.Text>
             </Card.Body>
             
-            <ShowButton {...args}/>
+            <ShowButton {...button_args}/>
         </Card>
     )
 }
