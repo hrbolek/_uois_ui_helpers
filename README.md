@@ -1,5 +1,8 @@
 # _uois_ui_helpers
 
+
+state functions have to have name onStudentUpdate ... i. e. onXXXXUpdate
+
 1. npm install
 
 2a) use storybook
