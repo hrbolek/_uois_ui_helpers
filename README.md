@@ -16,7 +16,7 @@ state functions have to have name onStudentUpdate ... i. e. onXXXXUpdate
 
 Story book usage demo
 
-https://storybook.js.org/docs/react/writing-tests/test-coverage
+
 
 npm install
 
