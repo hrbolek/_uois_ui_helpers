@@ -14,7 +14,6 @@ function pointsRender(points) {
 
 export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dateOfSubmission}) => {
     const today = new Date().getTime()
-    
     let deadline_color = "red"
     if (today < dateOfSubmission) { //deadline in the future
         deadline_color = "green"
