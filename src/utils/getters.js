@@ -11,3 +11,5 @@ export function assignmentsFromGroup(study_group_id) {
         Assignments.all.filter(iter_assignment => assignments_ids.includes(iter_assignment.id))
     )
 }
+
+

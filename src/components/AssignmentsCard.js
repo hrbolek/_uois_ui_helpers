@@ -1,5 +1,4 @@
 import { Card, Row, Table } from "react-bootstrap"
-import { Link } from "react-bootstrap-icons"
 
 
 function pointsRender(points) {
@@ -13,32 +12,34 @@ function pointsRender(points) {
     }
 }
 
-export const AssignmentsCard = ({subject, name, points, deadline, description, link}) => {
-    const deadline_date = Date.parse(deadline)
+export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dateOfSubmission}) => {
     const today = new Date().getTime()
     
     let deadline_color = "red"
-    if (today < deadline_date) { //deadline in the future
+    if (today < dateOfSubmission) { //deadline in the future
         deadline_color = "green"
     }
 
     return (
         <Card key="info" bg="info" text="light" style={{width: "20rem", textAlign:"center"}}>
-            <Card.Header>{subject} - {name}</Card.Header>
+            <Card.Header>{name}</Card.Header>
             <Card.Body>
                 <Table style={{color: "white"}}>
                     <tr>
-                        <td>datum odevzdání</td>
-                        <td style={{color: deadline_color}}>{deadline}</td>
+                        <td>datum zadání</td>
+                        <td>{dateOfEntry}</td>
                     </tr>
-                    {pointsRender(points)}
+                    <tr>
+                        <td>datum odevzdání</td>
+                        <td style={{color: deadline_color}}>{dateOfSubmission}</td>
+                    </tr>
                 </Table>
 
                 <Card style={{color:"black"}}>
-                    {description}
+                    {detailedDesc}
                 </Card>
 
-                <a href={link} target="_blank">odevzdání</a>
+                <a href={reference} target="_blank">odevzdání</a>
             </Card.Body>
         </Card>
     )

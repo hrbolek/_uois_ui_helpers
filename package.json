@@ -1,77 +1,55 @@
 {
-  "name": "uois_helpers",
+  "name": "survey",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -c .storybook -o .dist",
-    "start": "parcel ./runLocally/index.html",
-    "test:unit": "jest",
-    "test:lint": "eslint src .eslintplugin .storybook --ext .js,.jsx,.mjs",
-    "test": "npm run test:unit && npm run test:lint",
-    "test-storybook": "test-storybook"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.0",
-    "@storybook/addon-controls": "^7.0.0-rc.10",
-    "@storybook/addon-coverage": "^0.0.8",
-    "@storybook/addon-docs": "^7.0.0-rc.10",
-    "@storybook/addon-essentials": "^7.0.0-rc.10",
-    "@storybook/addon-links": "^7.0.0-rc.10",
-    "@storybook/addon-mdx-gfm": "^7.0.0-rc.10",
-    "@storybook/addon-notes": "^6.0.0-alpha.6",
-    "@storybook/react": "^7.0.0-rc.10",
-    "@storybook/react-webpack5": "^7.0.0-rc.10",
-    "@storybook/test-runner": "^0.10.0-next.11",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "core-js": "^3.1.3",
-    "css-loader": "^3.0.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "eslint": "^6.2.2",
-    "eslint-plugin-local": "^1.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
-    "jest": "28.1.3",
-    "jest-environment-node": "28.1.3",
-    "jest-enzyme": "^4.2.0",
-    "jest-runner": "28.1.3",
-    "parcel-bundler": "^1.8.1",
-    "postcss-modules": "^6.0.0",
-    "prettier": "^1.18.2",
-    "react-docgen": "^5.4.3",
-    "storybook": "^7.0.0-rc.10",
-    "storybook-addon-jsx": "^7.1.2",
-    "storybook-addon-react-router-v6": "^0.2.1",
-    "style-loader": "^0.23.1"
-  },
+  "homepage": "/ui",
+  "proxy": "http://localhost:31180/",
   "dependencies": {
-    "@blueprintjs/core": "^3.18.0",
-    "@blueprintjs/select": "^3.10.0",
-    "bootstrap": "5.2.3",
-    "classnames": "^2.2.6",
-    "create-react-class": "^15.6.3",
-    "jquery": "^3.4.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-bootstrap": "^2.1.2",
-    "react-bootstrap-icons": "^1.10.2",
-    "react-dom": "^16.8.6",
-    "react-organizational-chart": "2.2.0",
-    "react-router-dom": "^6.2.1",
-    "react-syntax-highlighter": "^15.5.0",
-    "recompose": "^0.17.0"
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
+    "survey-core": "^1.9.85",
+    "survey-creator-core": "^1.9.85",
+    "survey-creator-react": "^1.9.85",
+    "survey-react": "^1.9.85",
+    "web-vitals": "^2.1.4",
+    "uuid": "^9.0.0",
+    "react-select": "^5.7.3"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./node_modules/jest-enzyme/lib/index.js",
-      "./jest.setup.js"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
