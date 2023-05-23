@@ -6,12 +6,13 @@ import { Assignments } from "../stories/DataStructures"
 
 //const array = Assignments.all
 
-export const MultipleCards = ({array}) => {
+export const MultipleCards = (props) => {
+    console.log(props.length)
     return (
 
         <CardGroup>
 
-            {array?.map((element) => <AssignmentsCard {...element} />)}
+            {props.array?.map((element) => <AssignmentsCard {...element} />)}
         </CardGroup>
     )
 }   

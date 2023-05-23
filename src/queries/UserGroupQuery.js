@@ -12,6 +12,13 @@ export const UserSelectQueryJSON = () => ({
             name
             tasks {
               id
+              name
+              briefDesc
+              detailedDesc
+              reference
+              dateOfEntry
+              dateOfSubmission
+              dateOfFulfillment
             }
             studyPrograms {
               id

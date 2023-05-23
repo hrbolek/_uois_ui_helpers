@@ -10,6 +10,9 @@ export const TaskSelectQueryJSON = () => ({
           taskPage {
             id
             name
+            dateOfEntry
+            dateOfSubmission
+            dateOfFulfillment
           }
         }`
 })
