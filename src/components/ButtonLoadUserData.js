@@ -1,5 +1,5 @@
 import  { UserSelectQuery}  from '../queries/UserGroupQuery';
-import { useDispatch } from 'react-redux';začátku
+import { useDispatch } from 'react-redux';
 //import { loadData } from 'features/SurveySlice';
 import { useState } from 'react';
 import { UserActions } from 'utils/UserReducers';
