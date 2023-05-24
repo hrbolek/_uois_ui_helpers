@@ -31,7 +31,6 @@ export const SelectUser = (props) => {
     return (
         <div>
             <ReactSelect options={options} onChange={handleSelectChange}/>
-            
             {
                 selectedOption &&
                 (
