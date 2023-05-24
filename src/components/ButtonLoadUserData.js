@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { UserActions } from 'utils/UserReducers';
 import { SelectUser } from './SelectUser';
 
+
 export const LoadUserData = () => {
 
   const dispatch = useDispatch()   // načítací tlačítko button používá dispatch...v každé funkci ho importujeme zvlášť 
@@ -13,7 +14,7 @@ export const LoadUserData = () => {
 
     const fetchData = async () => { // asynchronní funkce-> další kody mohou být prováděny...čekáme než mi přijdou data ze serveru
       //(aktivně mohu mezitím provádět další věci)
-      // vijímka- try-catch- když to ze serveru nepříjde 
+      // výjimka- try-catch- když to ze serveru nepříjde 
       try {                            
         const response = await UserSelectQuery();// response bude trvat-> počkej
         const data = await response.json();
