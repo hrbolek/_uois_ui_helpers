@@ -18,7 +18,6 @@ export const LoadUserData = () => {
       try {                            
         const response = await UserSelectQuery();// response bude trvat-> počkej
         const data = await response.json();
-        console.log(data)
         dispatch(UserActions.loadFromServer(data.data.userPage)); //ukládám do storu hned na začátku
         setDataLoaded(true) 
       } catch (error) {

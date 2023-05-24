@@ -14,29 +14,27 @@ import { AssignmentsCard } from "./AssignmentsCard";
 export const SelectUser = (props) => {
     const users = useSelector(state => state.users)
     
-    const [selectedOption, setSelectedOption] = useState();
+    const [setselectedTasks, setsetselectedTasks] = useState();
 
     const handleSelectChange = (selected) => {
         const selected_user = users.find(user => {
             return user.id === selected.value;
           });
           const all_tasks = selected_user.tasks
-          console.log(all_tasks)
-          setSelectedOption(all_tasks)
+          setsetselectedTasks(all_tasks)
       };
 
     const options = users.map(user => ({label: user.name, value: user.id}))
-    console.log(selectedOption)
 
     return (
         <div>
             <ReactSelect options={options} onChange={handleSelectChange}/>
             {
-                selectedOption &&
+                setselectedTasks &&
                 (
                 <div>
                     {
-                        selectedOption.map((task) => (
+                        setselectedTasks.map((task) => (
                         <AssignmentsCard {...task} />))
                     }
                 </div>

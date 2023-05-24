@@ -17,7 +17,7 @@ export const LoadTaskData = () => {
         dispatch(TaskActions.loadFromServer(data.data.taskPage));
         setDataLoaded(true)
       } catch (error) {
-        console.error('Error fetching group names:', error);
+        console.error('Error fetching tasks:', error);
       }
     };
  
