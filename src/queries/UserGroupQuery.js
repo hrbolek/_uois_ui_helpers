@@ -1,7 +1,7 @@
 import { authorizedFetch } from '../queries/authorizedFetch'
 
 /**
- * Funkce
+ * Funkce vytvářející JSON string dotaz
  *  
  */
 export const UserSelectQueryJSON = () => ({
