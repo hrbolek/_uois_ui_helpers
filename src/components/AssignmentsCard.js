@@ -19,6 +19,8 @@ export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dat
         deadline_color = "green"
     }
 
+    const dateEntryTD = new Date(dateOfEntry)
+    const dateSubmissionTD = new Date(dateOfSubmission)
     return (
         <Card key="info" bg="info" text="light" style={{width: "20rem", textAlign:"center"}}>
             <Card.Header>{name}</Card.Header>
@@ -26,11 +28,11 @@ export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dat
                 <Table style={{color: "white"}}>
                     <tr>
                         <td>datum zadání</td>
-                        <td>{dateOfEntry}</td>
+                        <td>{dateEntryTD.toLocaleDateString()}</td>
                     </tr>
                     <tr>
                         <td>datum odevzdání</td>
-                        <td style={{color: deadline_color}}>{dateOfSubmission}</td>
+                        <td style={{color: deadline_color}}>{dateSubmissionTD.toLocaleDateString()}</td>
                     </tr>
                 </Table>
 
@@ -38,7 +40,7 @@ export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dat
                     {detailedDesc}
                 </Card>
 
-                <a href={reference} target="_blank">odevzdání</a>
+                <a href={reference} target="_blank">odkaz na úkol</a>
             </Card.Body>
         </Card>
     )
