@@ -4,7 +4,7 @@ import { authorizedFetch } from '../queries/authorizedFetch'
  * Funkce vytvářející JSON string dotaz
  *  
  */
-export const UserSelectQueryJSON = () => ({
+export const UserPageQueryJSON = () => ({
     "query":
         `{
           userPage {
@@ -32,7 +32,7 @@ export const UserSelectQueryJSON = () => ({
  * Realizace dotazu na server. Vyuziva autorizedFetch (zapouzdreni)
  */
 
-export const UserSelectQuery = () =>
+export const UserPageQuery = () =>
     authorizedFetch('/gql', {
-        body: JSON.stringify(UserSelectQueryJSON()),
+        body: JSON.stringify(UserPageQueryJSON()),
     })

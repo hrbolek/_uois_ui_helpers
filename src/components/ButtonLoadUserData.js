@@ -1,4 +1,4 @@
-import  { UserSelectQuery}  from '../queries/UserGroupQuery';
+import  { UserPageQuery}  from '../queries/UserGroupQuery';
 import { useDispatch } from 'react-redux';
 //import { loadData } from 'features/SurveySlice';
 import { useState } from 'react';
@@ -16,7 +16,7 @@ export const LoadUserData = () => {
       //(aktivně mohu mezitím provádět další věci)
       // výjimka- try-catch- když to ze serveru nepříjde 
       try {                            
-        const response = await UserSelectQuery();// response bude trvat-> počkej
+        const response = await UserPageQuery();// response bude trvat-> počkej
         const data = await response.json();
         dispatch(UserActions.loadFromServer(data.data.userPage)); //ukládám do storu hned na začátku
         setDataLoaded(true) 
