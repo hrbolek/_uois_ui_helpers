@@ -1,18 +1,12 @@
 
-import React, { useEffect } from "react"
-import CreatableSele from "react-select/creatable"
+import React from "react"
 import ReactSelect from 'react-select';
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "react-bootstrap";
-import { MultipleCards } from "./MultipleCards";
 import { useState } from "react";
-import { TaskActions } from "utils/TaskReducers";
 import { AssignmentsCard } from "./AssignmentsCard";
 
 
 
-export const SelectUser = (props) => {
-    const users = useSelector(state => state.users)
+export const SelectUser = ({users}) => {
     
     const [setselectedTasks, setsetselectedTasks] = useState();
 
