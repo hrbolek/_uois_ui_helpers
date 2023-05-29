@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { SelectUser } from './SelectUser';
-import { UsersFetch } from 'reducers/UserAsyncActions';
+import { UsersFetch } from 'fetches/UserAsyncActions';
 
 
 export const LoadUserData = () => {
@@ -14,7 +14,6 @@ export const LoadUserData = () => {
 
   useEffect(
     () => {
-      console.log("loading users data")
       dispatch(UsersFetch())
     }, []
   )

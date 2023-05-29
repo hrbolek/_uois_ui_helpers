@@ -1,5 +1,5 @@
-import { UserPageQuery } from "queries/UserGroupQuery"
-import { UserActions } from "utils/UserReducers"
+import { UserPageQuery } from "queries/UserPageQuery"
+import { UserActions } from "reducers/UserReducers"
 
 export const UsersFetchHelper = (query, resultSelector, dispatch, getState) => {
     const p = query()
@@ -26,3 +26,4 @@ export const UsersFetch = () => (dispatch, getState) => {
     }
     return bodyFunc()
 }
+

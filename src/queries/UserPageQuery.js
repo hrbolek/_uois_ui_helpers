@@ -1,4 +1,4 @@
-import { authorizedFetch } from '../queries/authorizedFetch'
+import { authorizedFetch } from './authorizedFetch'
 
 /**
  * Funkce vytvářející JSON string dotaz
