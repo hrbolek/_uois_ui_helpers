@@ -2,7 +2,7 @@ import { GroupActions } from "./groupreducers"
 
 import { GroupQuerySmall } from "./GroupQuerySmall"
 import { authorizedFetch } from "./authorizedFetch"
-import { TaskActions } from "utils/UserReducers"
+import { TaskActions } from "reducers/UserReducers"
 /**
  * Ask for the item on server and adds it or update it in the store to the heap
  * @param {*} id 

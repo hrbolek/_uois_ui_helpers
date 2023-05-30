@@ -1,22 +1,24 @@
 
+import { useEffect } from "react"
 import { Button } from "react-bootstrap"
-import { useDispatch } from "react-redux"
-import {UserActions} from "utils/UserReducers"
+import { useDispatch, useSelector } from "react-redux"
+import { TaskActions } from "reducers/TaskReducers"
 import { v1 as uuid1 } from "uuid"
 
 export const ButtonAddTask = (props) => {
+
     const dispatch = useDispatch()
 
     const onClick = (event) => {
-        dispatch(UserActions.addTask({id: uuid1(), name:"michal"}))
+        dispatch(TaskActions.insertTask({name:"novej task"}))
     }
 
     const deleteT = (event) => {
-        dispatch(UserActions.deleteTask({id: "123"}))
+        dispatch(TaskActions.deleteTask({id: "123"}))
     }
     if (props.d) {
         return (
-            <Button onClick={onClick}>pridej michala</Button>
+            <Button onClick={onClick}>pridej task</Button>
         )
     }
     return (

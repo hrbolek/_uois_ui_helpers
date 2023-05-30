@@ -1,8 +1,8 @@
-import  { TaskSelectQuery }  from '../queries/TaskGroupQuery';
+import  { TaskPageQuery }  from '../queries/TaskPageQuery';
 import { useDispatch } from 'react-redux';
 //import { loadData } from 'features/SurveySlice';
 import { useState } from 'react';
-import { TaskActions } from 'utils/TaskReducers';
+import { TaskActions } from 'reducers/TaskReducers';
 
 export const LoadTaskData = () => {
 
@@ -11,7 +11,7 @@ export const LoadTaskData = () => {
 
     const fetchData = async () => {
       try {
-        const response = await TaskSelectQuery();
+        const response = await TaskPageQuery();
         const data = await response.json();
         console.log(data)
         dispatch(TaskActions.loadFromServer(data.data.taskPage));

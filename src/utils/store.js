@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import userReducer from './UserReducers'
+import userReducer from '../reducers/UserReducers'
 import { Provider } from 'react-redux'
-import taskReducer from "./TaskReducers"
+import taskReducer from "reducers/TaskReducers"
 
 const initialState = {
     tasks: [
