@@ -10,7 +10,7 @@ export const ButtonAddTask = (props) => {
     const dispatch = useDispatch()
 
     const onClick = (event) => {
-        dispatch(TaskActions.addTask({name:"novej task"}))
+        dispatch(TaskActions.insertTask({name:"novej task"}))
     }
 
     const deleteT = (event) => {

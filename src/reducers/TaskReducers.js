@@ -5,7 +5,8 @@ export const taskSlice = createSlice({
     name: "tasks",
     initialState: {},
     reducers: {
-        addTask: (state, action) => {
+        //taskInsert
+        insertTask: (state, action) => {
             const task = action.payload;
             const id = task['id'] || uuid1()
             if (!task['id']) {
@@ -22,6 +23,16 @@ export const taskSlice = createSlice({
             action.payload.map(item => state[item.id] = {...item})
             return state
         }
+        /*,
+        used only in taskUpdate
+        updateTask: (state, action) => {
+            const newTask = action.payload;
+            const oldTask = state[newTask.id]
+            state[newTask.id] = {...oldTask, ...newTask}
+            
+            return state
+        } 
+        */
     }
 })
 

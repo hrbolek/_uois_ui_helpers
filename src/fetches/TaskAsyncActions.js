@@ -24,3 +24,52 @@ export const TasksFetch = () => (dispatch, getState) => {
     }
     return bodyFunc()
 }
+
+export const TaskAsyncInsert = (task) => (dispatch, getState) => {
+    const taskMutationJSON = (task) => {
+        return {
+            query: `mutation ($id: ID!, $name: String!, $lastchange: DateTime!) {
+                groupUpdate(group: {id: $id, name: $name, lastchange: $lastchange}) {
+                  id
+                  msg
+                  group {
+                    id
+                    name
+                    lastchange
+                  }
+                }
+              }`,
+            variables: task
+            }
+        }
+
+    const params = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        redirect: 'follow', // manual, *follow, error
+        body: JSON.stringify(taskMutationJSON(task))
+    }
+
+
+    return fetch('/api/gql', params)
+    //return authorizedFetch('/api/gql', params)
+        .then(
+            resp => resp.json()
+        )
+        .then(
+            json => {
+                const msg = json.data.taskUpdate.msg
+                if (msg === "fail") {
+                    console.log("Update selhalo")
+                } else {
+                    //mame hlasku, ze ok, musime si prebrat token (lastchange) a pouzit jej pro priste
+                    const lastchange = json.data.taskUpdate.task.lastchange
+                    dispatch(TaskActions.addTask({...task, lastchange: lastchange}))
+                }
+                return json
+            }
+        )   
+}
