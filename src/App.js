@@ -23,6 +23,7 @@ function App() {
         <LoadUserData />
         <ButtonAddTask d={true}/>
         <TaskLoader />
+        <DateInput></DateInput>
       </div>
       </AppProvider>
       
