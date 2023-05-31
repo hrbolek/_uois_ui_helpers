@@ -1,4 +1,5 @@
 
+import { TaskAsyncInsert } from "fetches/TaskAsyncActions"
 import { useEffect } from "react"
 import { Button } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
@@ -9,8 +10,14 @@ export const ButtonAddTask = (props) => {
 
     const dispatch = useDispatch()
 
+
+    const newTask = {userId: "2d9dcbec-a4a2-11ed-b9df-0242ac120003", name: "newName",
+        briefDes: "new brief descriptionnn", detailedDes: "new dettttt", reference: "www.google.com",
+        dateOfSubmission: "2023-05-30T05:59:32.689363", dateOfFulfillment: "2023-05-30T05:59:32.689363"}
+
+
     const onClick = (event) => {
-        dispatch(TaskActions.insertTask({name:"novej task"}))
+        dispatch(TaskAsyncInsert(newTask))
     }
 
     const deleteT = (event) => {

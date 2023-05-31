@@ -28,17 +28,30 @@ export const TasksFetch = () => (dispatch, getState) => {
 export const TaskAsyncInsert = (task) => (dispatch, getState) => {
     const taskMutationJSON = (task) => {
         return {
-            query: `mutation ($id: ID!, $name: String!, $lastchange: DateTime!) {
-                groupUpdate(group: {id: $id, name: $name, lastchange: $lastchange}) {
-                  id
-                  msg
-                  group {
-                    id
-                    name
-                    lastchange
-                  }
-                }
-              }`,
+            query: `mutation ($userId: ID!, $name: String!, $briefDes: String!, $detailedDes: String!, $reference: String!, $dateOfSubmission: DateTime!, $dateOfFulfillment: DateTime!) {
+                        taskInsert(task: {userId: $userId, name: $name, briefDes: $briefDes, detailedDes: $detailedDes, reference: $reference, dateOfSubmission: $dateOfSubmission, dateOfFulfillment: $dateOfFulfillment}) {
+                            id
+                            msg
+                            task {
+                                id
+                                lastchange
+                                name
+                                briefDesc
+                                detailedDesc
+                                reference
+                                dateOfEntry
+                                dateOfSubmission
+                                dateOfFulfillment
+                                event {
+                                    id
+                                }
+                                user {
+                                    id
+                                    name
+                                }
+                            }
+                        }
+                    }`,
             variables: task
             }
         }
@@ -61,13 +74,15 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
         )
         .then(
             json => {
-                const msg = json.data.taskUpdate.msg
+                console.log("before is ok")
+                console.log(json)
+                const msg = json.data.taskInsert.msg
                 if (msg === "fail") {
-                    console.log("Update selhalo")
+                    console.log("Insert selhalo")
                 } else {
                     //mame hlasku, ze ok, musime si prebrat token (lastchange) a pouzit jej pro priste
-                    const lastchange = json.data.taskUpdate.task.lastchange
-                    dispatch(TaskActions.addTask({...task, lastchange: lastchange}))
+                    const lastchange = json.data.taskInsert.task.lastchange
+                    dispatch(TaskActions.insertTask({...task, lastchange: lastchange}))
                 }
                 return json
             }
