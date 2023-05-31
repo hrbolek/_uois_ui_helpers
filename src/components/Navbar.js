@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function ColorSchemes() {
+export const Navbar= (props) =>  {
   return (
     <>
       <Navbar bg="primary" variant="dark">
