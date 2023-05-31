@@ -88,3 +88,42 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
             }
         )   
 }
+
+
+/*
+mutation {
+
+  taskInsert(task: {
+    userId: "2d9dc9a8-a4a2-11ed-b9df-0242ac120003"
+    name: "mujnovejtask"
+    briefDes: "nove brief"
+    detailedDes: "nove deta"
+    reference:"nove ref"
+    dateOfEntry: "2023-05-30T05:59:32.689363"
+    dateOfSubmission:"2023-05-30T05:59:32.689363"
+    dateOfFulfillment: "2023-05-30T05:59:32.689363"
+  }){
+    id
+    msg
+    task {
+      id
+      lastchange
+      name
+      briefDesc
+      detailedDesc
+      reference
+      dateOfEntry
+      dateOfSubmission
+      dateOfFulfillment
+      event {
+        id
+      }
+      user {
+        id
+        name
+      }
+    }
+  }
+}
+tohle vrátí event a user null... proč? k čemu bych měl do parametrů query dávat event id a user id a co reprezentují?
+*/
