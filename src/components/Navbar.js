@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+//https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
+//https://www.youtube.com/watch?v=DTPERO1bl7w
 export const Navbar= (props) =>  {
   return (
     <>
