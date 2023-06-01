@@ -5,7 +5,7 @@ import { TryItComponent } from './TryItComponent';
 
 //https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
 //https://www.youtube.com/watch?v=DTPERO1bl7w
-//https://www.youtube.com/watch?v=i8fAO_zyFAM
+//https://www.youtube.com/watch?v=i8fAO_zyFAM popup
 //https://react-bootstrap.netlify.app/docs/components/navbar/
 export const Navbar= (props) =>  {
   return (

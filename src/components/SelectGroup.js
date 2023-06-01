@@ -1,31 +1,30 @@
-
-
+import { useState } from "react";
+import ReactSelect from 'react-select';
 
 export const SelectGroup = ({groups}) => {
-    const [selectedTasks, setSelectedGroup] = useState();
-    const handleSelectChange = (selected) => {
-        const selected_group = groups.find(group => {
-            return group.id === selected.value;
-          });
-          const all_tasks = selected_group.tasks
-          setsetselectedTasks(all_tasks)
-      };
+    console.log(groups)
+    const [selectedGroup, setSelectedGroup] = useState();
 
-    const options = users.map(user => ({label: user.name, value: user.id}))
-    const new_options = createColumns(options, 3)
+    const handleSelectChange = (selected) => {
+        const selected_group = groups[selected.value];
+          setSelectedGroup(selected_group)
+      };
+    let options = []
+    if (groups) {
+        console.log("printing entries")
+        console.log(Object.entries(groups))
+        options = Object.entries(groups).map(group => ({label: group[1].name, value: group[1].id}))
+    }
 
     return (
         <div>
-            Vyber studenta, jehož úkoly hledáš!
-            <ReactSelect options={options} onChange={handleSelectChange} placeholder="Vyber studenta"/>
+            Vyber studijní skupinu, jejiž úkoly hledáš!
+            <ReactSelect options={options} onChange={handleSelectChange} placeholder="Výběr studijní skupiny"/>
             {
-                setselectedTasks &&
+                selectedGroup &&
                 (
                 <div>
-                    {
-                        setselectedTasks.map((task) => (
-                        <AssignmentsCard {...task} />))
-                    }
+                    {selectedGroup.name}
                 </div>
                 )     
             }

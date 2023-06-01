@@ -6,6 +6,8 @@ import { TaskPageQuery } from "queries/TaskPageQuery";
 import { TaskActions } from "reducers/TaskReducers";
 import { useDispatch } from "react-redux";
 import { UsersFetch } from "fetches/UserAsyncActions";
+import { GroupsFetch } from "fetches/GroupAsyncActions";
+import { SelectGroup } from "./SelectGroup";
 
 const styleObject = {
   "--bs-nav-link-color": "var(--bs-white)",
@@ -19,11 +21,13 @@ export const HomePage = (props) =>  {
 
   const dispatch = useDispatch()  
   const users = useSelector(state => state.users)
+  const groups = useSelector(state => state.groups)
 
   const studentClick = (event)=>  {
     setStudentShown(studentShown + 1)
     if (!studentShown) {
       dispatch(UsersFetch())
+      dispatch(GroupsFetch())
     }
   }
 
@@ -41,7 +45,9 @@ export const HomePage = (props) =>  {
           <button onClick={studentClick} class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
-        { Boolean(studentShown) && <SelectUser users={users}/> }
+        { Boolean(studentShown) && <SelectUser users={users}/>} 
+        { Boolean(studentShown) && <SelectGroup groups={groups}/>}
+
       </div>
     )
 }

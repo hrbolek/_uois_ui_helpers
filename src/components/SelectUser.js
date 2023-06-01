@@ -30,7 +30,7 @@ export const SelectUser = ({users}) => {
 
     return (
         <div>
-            Vyber studenta, jehož úkoly hledáš!
+           Vyber studenta, jehož úkoly hledáš!
             <ReactSelect options={new_options} onChange={handleSelectChange} placeholder="Vyber studenta"/>
             {
                 setselectedTasks &&

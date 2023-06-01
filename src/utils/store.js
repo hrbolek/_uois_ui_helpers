@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import userReducer from '../reducers/UserReducers'
 import { Provider } from 'react-redux'
 import taskReducer from "reducers/TaskReducers"
+import groupReducer from 'reducers/GroupReducers'
 
 const initialState = {
     tasks: [
@@ -20,7 +21,8 @@ const initialState = {
 export const store = configureStore({
     reducer: {
         users : userReducer,
-        tasks : taskReducer
+        tasks : taskReducer,
+        groups: groupReducer
     },
     //preloadedState: initialState
 })
