@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 //https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
 //https://www.youtube.com/watch?v=DTPERO1bl7w
+//https://www.youtube.com/watch?v=i8fAO_zyFAM
 export const Navbar= (props) =>  {
   return (
     <>
