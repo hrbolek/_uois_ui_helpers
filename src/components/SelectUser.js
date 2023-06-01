@@ -16,28 +16,29 @@ const createColumns = (items, columns) => {
   };
 
 export const SelectUser = ({users}) => {
-    const [setselectedTasks, setsetselectedTasks] = useState();
+    console.log("printing students")
+    console.log(users)
+    const [selectedTasks, setSelectedTasks] = useState();
     const handleSelectChange = (selected) => {
-        const selected_user = users.find(user => {
-            return user.id === selected.value;
-          });
-          const all_tasks = selected_user.tasks
-          setsetselectedTasks(all_tasks)
+        const selected_user = users[selected.value]
+        const all_tasks = selected_user.tasks
+        setSelectedTasks(all_tasks)
       };
-
-    const options = users.map(user => ({label: user.name, value: user.id}))
-    const new_options = createColumns(options, 3)
+    let options = []
+    if (users) {
+        options = Object.entries(users).map(user => ({label: user[1].name, value: user[1].id}))
+    }
 
     return (
         <div>
            Vyber studenta, jehož úkoly hledáš!
-            <ReactSelect options={new_options} onChange={handleSelectChange} placeholder="Vyber studenta"/>
+            <ReactSelect options={options} onChange={handleSelectChange} placeholder="Vyber studenta"/>
             {
-                setselectedTasks &&
+                selectedTasks &&
                 (
                 <div>
                     {
-                        setselectedTasks.map((task) => (
+                        selectedTasks.map((task) => (
                         <AssignmentsCard {...task} />))
                     }
                 </div>

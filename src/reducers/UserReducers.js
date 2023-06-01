@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
     name: "users",
-    initialState: [],
+    initialState: {},
     reducers: {
         addUser: (state, action) => {
             const task = action.payload
@@ -23,8 +23,8 @@ export const userSlice = createSlice({
             return state
         },
         loadFromServer: (state, action) => {
-            const tasks = action.payload
-            state = [...state, ...tasks]
+            console.log(action.payload)
+            action.payload.map(item => state[item.id] = {...item})
             return state
         }
     }
