@@ -4,8 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 export const DateInput = (props) => {
   return (
     <>
-      <br />
-      <InputGroup className="mb-3">
+      <InputGroup className="mb-1">
         <InputGroup.Text id="inputGroup-sizing-default">
           {props.name}
         </InputGroup.Text>

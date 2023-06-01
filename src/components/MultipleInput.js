@@ -13,10 +13,6 @@ export const MultipleInput= (props) =>  {
         <WriteInput name = "odkaz na stránku"/>
         <DateInput name = "datum odevzdání"/>
         <DateInput name = "datum plnění" />
-        
-        
-
-    </div>
-    
+    </div> 
   );
 }
