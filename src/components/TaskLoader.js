@@ -7,7 +7,6 @@ export const TaskLoader = () => {
     const tasks = useSelector(state => state.tasks)
 
     useEffect(() => {
-        console.log("printing tasks")
         dispatch(TasksFetch())
     }, [])
 
