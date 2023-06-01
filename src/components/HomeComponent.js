@@ -13,7 +13,7 @@ const styleObject = {
   "--bs-nav-pills-link-active-bg": "var(--bs-white)"
 };
 
-export const HomePage = (props) =>  {
+export const HomeComponent = (props) =>  {
   const [studentShown, setStudentShown] = useState(0)
   const [teacherShown, setTeacherShown] = useState(false)
 

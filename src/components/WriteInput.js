@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-export const DateInput = (props) => {
+export const WriteInput = (props) => {
   return (
     <>
       <br />

@@ -10,6 +10,10 @@ import { TaskLoader } from 'components/TaskLoader';
 import { DateInput } from 'components/DateInput';
 import { TryItComponent } from 'components/TryItComponent';
 import { HomePage } from 'components/HomeComponent';
+import { MultipleInput } from 'components/MultipleInput'; 
+import { TextInput } from 'components/WriteInput';
+import {HomeComponent} from 'components/HomeComponent';
+
 /*
 function getData (id= "adde473d-5c78-4171-bf16-8e7f97bef5f9") {
   const tmp = useSelector(state => state.tasks)
@@ -22,7 +26,8 @@ function App() {
   return (
     <div className="App">
       <AppProvider>
-          <DateInput />
+          <HomeComponent/>
+          <MultipleInput/>
       </AppProvider>
       
     </div>
