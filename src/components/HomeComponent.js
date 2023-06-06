@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { UsersFetch } from "fetches/UserAsyncActions";
 import { GroupsFetch } from "fetches/GroupAsyncActions";
 import { SelectGroup } from "./SelectGroup";
+import { WriteInput } from "./WriteInput";
+import { MultipleInput } from "./MultipleInput";
 
 const styleObject = {
   "--bs-nav-link-color": "var(--bs-white)",
@@ -33,6 +35,8 @@ export const HomePage = (props) =>  {
 
   const teacherClick = (event) => {
     setTeacherShown(!teacherShown)
+    //if teach shown is zero, dispatch it and return teacher if is odd
+
   }
 
   return (
@@ -45,9 +49,10 @@ export const HomePage = (props) =>  {
           <button onClick={studentClick} class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
-        { Boolean(studentShown) && <SelectUser users={users}/>} 
-        { Boolean(studentShown) && <SelectGroup groups={groups}/>}
-
+        { Boolean(studentShown % 2) && <SelectUser users={users}/>} 
+        { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
+        { teacherShown && <MultipleInput />}
+        
       </div>
     )
 }
