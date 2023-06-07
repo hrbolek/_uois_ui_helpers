@@ -52,7 +52,7 @@ export const HomePage = (props) =>  {
       </ul>
         { Boolean(studentShown % 2) && <SelectUser users={users}/>} 
         { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
-        { teacherShown && <TaskInputModal />}
+        { teacherShown && <TaskInputModal showModal={teacherShown} setModal={setTeacherShown}/>}
         
       </div>
     )

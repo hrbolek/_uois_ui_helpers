@@ -6,8 +6,8 @@ export const DescriptionInput = (props) => {
 
     return (
         <div class="form-group">
-        <label for="exampleFormControlTextarea1">{props.name}</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <small className="form-text text-muted">Zadejte {props.name}</small>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
       </div>
     )
 }

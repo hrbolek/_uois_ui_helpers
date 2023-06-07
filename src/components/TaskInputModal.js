@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import { MultipleInput } from './MultipleInput';
 
-export const TaskInputModal = ({}) => {
-  const [showModal, setShowModal] = useState(false);
-
+export const TaskInputModal = ({showModal, setModal}) => {
   const handleClose = () => {
-    setShowModal(false);
-  };
-
-  const handleOpen = () => {
-    setShowModal(true);
+    setModal(!showModal)
   };
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open Popup</Button>
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Popup Title</Modal.Title>
+          <Modal.Title>Vytvořte úkol</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Popup content goes here...</p>
+          <MultipleInput />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
