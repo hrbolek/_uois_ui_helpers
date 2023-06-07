@@ -1,18 +1,17 @@
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { useState } from 'react';
 
 export const WriteInput = (props) => {
+
   return (
-    <>
-      <InputGroup className="mb-1">
-        <InputGroup.Text id="inputGroup-sizing-default">
-          {props.name}
-        </InputGroup.Text>
-        <Form.Control
-          aria-label= {props.name}
-          aria-describedby="inputGroup-sizing-default"
-        />
-      </InputGroup>
-    </>
-  );
+      <form>
+        <div className="form-group">
+          <small className="form-text text-muted">Zadejte {props.name}</small>
+          <input type="email" className="form-control"  placeholder={props.name} />
+        </div>
+
+
+      </form>
+  )
 }

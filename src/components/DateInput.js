@@ -5,7 +5,7 @@ export const DateInput = (props) => {
   return (
     <>
       <InputGroup className="mb-1">
-        <InputGroup.Text id="inputGroup-sizing-default">
+        <InputGroup.Text className="text-end" style={{ width: props.width}}>
           {props.name}
         </InputGroup.Text>
         <Form.Control

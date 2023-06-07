@@ -10,6 +10,7 @@ import { GroupsFetch } from "fetches/GroupAsyncActions";
 import { SelectGroup } from "./SelectGroup";
 import { WriteInput } from "./WriteInput";
 import { MultipleInput } from "./MultipleInput";
+import { TaskInputModal } from "./TaskInputModal";
 
 const styleObject = {
   "--bs-nav-link-color": "var(--bs-white)",
@@ -51,7 +52,7 @@ export const HomePage = (props) =>  {
       </ul>
         { Boolean(studentShown % 2) && <SelectUser users={users}/>} 
         { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
-        { teacherShown && <MultipleInput />}
+        { teacherShown && <TaskInputModal />}
         
       </div>
     )

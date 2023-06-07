@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactSelect from 'react-select';
+import { MultipleCards } from "./MultipleCards";
 
 export const SelectGroup = ({groups}) => {
     console.log(groups)
@@ -11,10 +12,10 @@ export const SelectGroup = ({groups}) => {
       };
     let options = []
     if (groups) {
-        console.log("printing entries")
-        console.log(Object.entries(groups))
         options = Object.entries(groups).map(group => ({label: group[1].name, value: group[1].id}))
     }
+
+    let selectedGroupTasks = []
 
     return (
         <div>
@@ -24,7 +25,7 @@ export const SelectGroup = ({groups}) => {
                 selectedGroup &&
                 (
                 <div>
-                    {selectedGroup.name}
+                    <MultipleCards array={selectedGroupTasks} />
                 </div>
                 )     
             }

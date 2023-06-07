@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-export const TryItComponent = () => {
+export const TaskInputModal = ({showModal, handleClose}) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
