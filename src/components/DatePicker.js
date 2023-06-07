@@ -1,9 +1,19 @@
 export const DatePicker= (props)=>{
+  const today = new Date()
+  const minDate = new Date();
+  const maxDate = new Date()
+
+  minDate.setFullYear(today.getFullYear() - 1);
+  maxDate.setFullYear(today.getFullYear() + 5)
+
   return (
     <form>
   <label>
-    Datum odevzdání:
-    <input type="date" name="party" min="2017-04-01" max="2025-04-30" />
+    <div>
+    {props.name}
+    </div>
+    <input type="date" min={minDate} max={maxDate} />
+
   </label>
 </form>
   )
