@@ -2,10 +2,14 @@ import React from "react";
 import { DateInput } from "./DateInput";
 import { WriteInput } from "./WriteInput";
 import { DescriptionInput } from "./DescriptionInput";
+import { DatePicker } from "./DatePicker";
 
+const dateStyle = {
+  flex: 1,
+  backgroundColor: 'lightblue',
+}
 
-
-export const MultipleInput= (props) =>  {
+export const MultipleInput= (props) => {
   const width = "160px"
   return (
     <div>
@@ -31,8 +35,19 @@ export const MultipleInput= (props) =>  {
         <DescriptionInput name="úplný popis úkolu" />
 
         <WriteInput name = "odkaz na stránku"width={width}/>
-        <DateInput name = "datum odevzdání"width={width}/>
-        <DateInput name = "datum plnění" width={width}/>
+
+        <div style={ {
+      display: 'flex',
+            }}>
+
+          <div style={dateStyle}>
+            <DatePicker name="Datum odevzdání:" />
+          </div>
+
+          <div style={dateStyle}>
+            <DatePicker name="Datum naplnění:"/>
+            </div>      
+        </div>
     </div> 
   );
 }
