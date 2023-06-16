@@ -15,8 +15,9 @@ export const ButtonAddTask = (props) => {
         briefDes: "new brief descriptionnn", detailedDes: "new dettttt", reference: "www.google.com",
         dateOfSubmission: "2023-05-30T05:59:32.689363", dateOfFulfillment: "2023-05-30T05:59:32.689363"}
 
-
-    const onClick = (event) => {
+//When the user clicks one of these buttons, 
+//they are sent to an action function that performs a specific task
+    const onClick = (event) => { 
         dispatch(TaskAsyncInsert(newTask))
     }
 
@@ -25,10 +26,10 @@ export const ButtonAddTask = (props) => {
     }
     if (props.d) {
         return (
-            <Button onClick={onClick}>pridej task</Button>
+            <Button onClick={onClick}>pridej task</Button>//button 1
         )
     }
     return (
-        <Button onClick={deleteT}>smaz michala</Button>
+        <Button onClick={deleteT}>smaz michala</Button>//button 2
     )
 }

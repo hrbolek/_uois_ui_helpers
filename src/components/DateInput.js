@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-
+//creating a date input 
 export const DateInput = (props) => {
   return (
     <>

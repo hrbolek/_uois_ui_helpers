@@ -6,8 +6,9 @@ import { UsersFetch } from 'fetches/UserAsyncActions';
 
 export const LoadUserData = () => {
 
-  const dispatch = useDispatch()   // načítací tlačítko button používá dispatch...v každé funkci ho importujeme zvlášť 
-  const [dataLoaded, setDataLoaded] = useState(false)  // vytvářím funkční alias-. dál používám jen dispatch, zneviditelním button po kliknutí 
+  const dispatch = useDispatch()   //loading button button uses dispatch...in each function we import it separately
+  const [dataLoaded, setDataLoaded] = useState(false)  //create a working alias, continue to use only dispatch
+  //makes the button invisible 
 
   const users = useSelector(state => state.users)
 

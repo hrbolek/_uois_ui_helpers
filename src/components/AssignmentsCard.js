@@ -1,6 +1,6 @@
 import { Card, Row, Table } from "react-bootstrap"
 
-
+//function that accepts an array of points and returns the number of points.
 function pointsRender(points) {
     if (points > 0) {
         return (
@@ -21,6 +21,7 @@ export const AssignmentsCard = ({name, detailedDesc, reference, dateOfEntry, dat
 
     const dateEntryTD = new Date(dateOfEntry)
     const dateSubmissionTD = new Date(dateOfSubmission)
+    //creating a card
     return (
         <Card key="info" bg="info" text="light" style={{width: "20rem", textAlign:"center"}}>
             <Card.Header>{name}</Card.Header>

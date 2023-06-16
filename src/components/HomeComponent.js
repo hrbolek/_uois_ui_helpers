@@ -11,21 +11,21 @@ import { SelectGroup } from "./SelectGroup";
 import { WriteInput } from "./WriteInput";
 import { MultipleInput } from "./MultipleInput";
 import { TaskInputModal } from "./TaskInputModal";
-
+// creating a homepage
 const styleObject = {
   "--bs-nav-link-color": "var(--bs-white)",
   "--bs-nav-pills-link-active-color": "var(--bs-primary)",
   "--bs-nav-pills-link-active-bg": "var(--bs-white)"
 };
-
+//two variables, used to track whether a student is currently displayed on the page or not
 export const HomePage = (props) =>  {
   const [studentShown, setStudentShown] = useState(0)
   const [teacherShown, setTeacherShown] = useState(false)
 
   const dispatch = useDispatch()  
-  const users = useSelector(state => state.users)
+  const users = useSelector(state => state.users) // allows data to be selected from the state based on the respective keys used
   const groups = useSelector(state => state.groups)
-
+// two dispatch functions, they will be called when any of these events occur
   const studentClick = (event)=>  {
     setStudentShown(studentShown + 1)
     if (!studentShown) {
@@ -36,10 +36,10 @@ export const HomePage = (props) =>  {
 
   const teacherClick = (event) => {
     setTeacherShown(!teacherShown)
-    //if teach shown is zero, dispatch it and return teacher if is odd
+    
 
   }
-
+//homepage creating
   return (
       <div>
       <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style={styleObject}>

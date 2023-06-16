@@ -5,7 +5,7 @@ import { CardGroup } from "react-bootstrap";
 import { Assignments } from "../stories/DataStructures"
 
 //const array = Assignments.all
-
+//multiplecard
 export const MultipleCards = (props) => {
     console.log(props.length)
     return (
