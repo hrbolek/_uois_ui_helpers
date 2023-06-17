@@ -4,6 +4,7 @@ import userReducer from '../reducers/UserReducers'
 import { Provider } from 'react-redux'
 import taskReducer from "reducers/TaskReducers"
 import groupReducer from 'reducers/GroupReducers'
+import { PartUsersFetch } from 'fetches/UserAsyncActions'
 
 const initialState = {
     tasks: [
@@ -18,6 +19,8 @@ const initialState = {
     ]
 }
 
+
+
 export const store = configureStore({
     reducer: {
         users : userReducer,
@@ -26,6 +29,15 @@ export const store = configureStore({
     },
     //preloadedState: initialState
 })
+
+const dispatch = store.dispatch
+
+
+export const actions = {
+    partUsersFetch: (letters) => dispatch(PartUsersFetch(letters)),
+
+}
+
 
 export const AppProvider = (props) => {
     return (

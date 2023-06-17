@@ -32,7 +32,13 @@ export const userSlice = createSlice({
             const oldTasks = state[userId].tasks
             state[userId].tasks = [...oldTasks, action.payload]
             return state
+        },
+        partUsersInsert: (state, action) => {
+            state = {}
+            action.payload.map(item => state[item.id] = {...item})
+            return state
         }
+        
     }
 })
 
