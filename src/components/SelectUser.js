@@ -16,7 +16,7 @@ const createColumns = (items, columns) => {
     return result;
   };
 
-export const SelectUser = ({users}) => {
+export const SelectUser = ({users, setCreateTask}) => {
     console.log("printing students")
     console.log(users)
     const [selectedTasks, setSelectedTasks] = useState();
@@ -42,7 +42,7 @@ export const SelectUser = ({users}) => {
                 (
                 <div>
                     {
-                        <TasksTable array={selectedTasks} userName={username}/>
+                        <TasksTable array={selectedTasks} userName={username} createTask={setCreateTask}/>
                     }
                 </div>
                 )     

@@ -8,6 +8,11 @@ import { Assignments } from "../../stories/DataStructures"
 export const TasksTable = (props) => {
     console.log(props.array.length)
     console.log(props.userName)
+
+    const handleCreateTask = (event) => {
+        props.createTask(true)
+    }
+
     return (
         <table className="table" >
             <thead className="thead">
@@ -28,6 +33,7 @@ export const TasksTable = (props) => {
                     <TaskRow key={element.id} index={index} {...element} />
                     ))}
             </tbody>
+            <button type="button" class="btn btn-success" onClick={handleCreateTask}>+úkol</button>
         </table>
 
     )

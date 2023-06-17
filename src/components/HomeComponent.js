@@ -39,6 +39,14 @@ export const HomePage = (props) =>  {
     
 
   }
+
+
+  const [creatingTask, setCreateTask] = useState(false)
+  const createTask = (event) => {
+    setCreateTask(!creatingTask)
+  }
+
+
 //homepage creating
   return (
       <div>
@@ -50,9 +58,11 @@ export const HomePage = (props) =>  {
           <button onClick={studentClick} className="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
-        { Boolean(studentShown % 2) && <SelectUser users={users}/>} 
+        { Boolean(studentShown % 2) && <SelectUser users={users} setCreateTask={createTask} />} 
         { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
         { teacherShown && <TaskInputModal showModal={teacherShown} setModal={setTeacherShown}/>}
+
+        {creatingTask && <TaskInputModal showModal={creatingTask} setModal={setCreateTask} />}
         
       </div>
     )
