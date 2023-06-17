@@ -1,5 +1,5 @@
 
-import { AssignmentsCard } from "../components/AssignmentsCard"
+import { AssignmentsCard } from "../components/AssignmentsRow"
 import { Assignments } from "./DataStructures"
 
 export default {

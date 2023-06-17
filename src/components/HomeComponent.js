@@ -42,12 +42,12 @@ export const HomePage = (props) =>  {
 //homepage creating
   return (
       <div>
-      <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style={styleObject}>
-      <li class="nav-item" role="presentation">
-          <button onClick={teacherClick} class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Editor</button>
+      <ul className="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style={styleObject}>
+      <li className="nav-item" role="presentation">
+          <button onClick={teacherClick} className="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Editor</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button onClick={studentClick} class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
+        <li className="nav-item" role="presentation">
+          <button onClick={studentClick} className="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
         { Boolean(studentShown % 2) && <SelectUser users={users}/>} 

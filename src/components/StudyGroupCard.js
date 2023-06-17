@@ -1,10 +1,10 @@
 import { Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { assignmentsFromGroup } from '../utils/getters';
-import { AssignmentsCard } from './AssignmentsCard';
+import { AssignmentsCard } from './AssignmentsRow';
 
 import { ShowButton } from './ShowButton';
-import { MultipleCards } from './MultipleCards';
+import { MultipleCards } from './AssignmentsTable';
 
 const textStyle = {
     color: "green",

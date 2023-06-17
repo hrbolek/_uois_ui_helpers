@@ -2,7 +2,8 @@
 import React from "react"
 import ReactSelect from 'react-select';
 import { useState } from "react";
-import { AssignmentsCard } from "./AssignmentsCard";
+import { AssignmentsCard } from "./AssignmentsRow";
+import { MultipleAssignments } from "./AssignmentsTable";
 
 const createColumns = (items, columns) => {
     const result = [];
@@ -38,8 +39,7 @@ export const SelectUser = ({users}) => {
                 (
                 <div>
                     {
-                        selectedTasks.map((task) => (
-                        <AssignmentsCard {...task} />))
+                        <MultipleAssignments array={selectedTasks}/>
                     }
                 </div>
                 )     
