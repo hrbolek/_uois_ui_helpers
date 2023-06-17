@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 
 export const TaskInputModal = ({showModal, setModal, user}) => {
-  const [newTask, setNewTask] = useState({userId:user.id})
+  const [newTask, setNewTask] = useState()
   const dispatch = useDispatch()
 
   const handleClose = () => {
