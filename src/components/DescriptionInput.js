@@ -1,7 +1,5 @@
 
 
-
-
 export const DescriptionInput = ({name, setTaskAtribute}) => {
     const handleChange = (event) => {
         setTaskAtribute(event.target.value)
