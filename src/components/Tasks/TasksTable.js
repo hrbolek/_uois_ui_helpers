@@ -6,11 +6,12 @@ import { Assignments } from "../../stories/DataStructures"
 //const array = Assignments.all
 //multiplecard
 export const TasksTable = (props) => {
-    console.log(props.array.length)
-    console.log(props.userName)
 
     const handleCreateTask = (event) => {
-        props.createTask(true)
+        //into create task add default values for name and surname which cannot be changed - multiple task should have default values
+        props.createTask()
+        console.log(props.userSurname)
+        props.setInputObject({readOnly:true, userName:props.userName, userSurname:props.userSurname})
     }
 
     return (

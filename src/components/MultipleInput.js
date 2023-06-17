@@ -20,13 +20,13 @@ export const MultipleInput= (props) => {
                 flex: 1,
                 backgroundColor: 'lightblue',
               }}>
-            <WriteInput name = "jméno" width={width} placeholder="sometext"/>
+            <WriteInput name = "jméno" width={width} placeholder="sometext" readOnly={props.readOnly} userName={props.userName}/>
           </div>
           <div style={ {
                 flex: 1,
                 backgroundColor: 'lightblue',
               }}>
-            <WriteInput name = "příjmení" width={width}/>
+            <WriteInput name = "příjmení" width={width} readOnly={props.readOnly} userName={props.userSurname}/>
           </div>
         </div>
         <WriteInput name = "název úkolu"width={width}/>

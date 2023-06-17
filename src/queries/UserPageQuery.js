@@ -10,6 +10,7 @@ export const UserPageQueryJSON = () => ({
           userPage {
             id
             name
+            surname
             tasks {
               id
               name

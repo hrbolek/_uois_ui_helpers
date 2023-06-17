@@ -16,17 +16,19 @@ const createColumns = (items, columns) => {
     return result;
   };
 
-export const SelectUser = ({users, setCreateTask}) => {
+export const SelectUser = ({users, setCreateTask, setInputObject}) => {
     console.log("printing students")
     console.log(users)
     const [selectedTasks, setSelectedTasks] = useState();
     const [username, setUsername] = useState()
+    const [userSurname, setUserSurname] = useState()
 
     const handleSelectChange = (selected) => {
         const selected_user = users[selected.value]
         const all_tasks = selected_user.tasks
         setSelectedTasks(all_tasks)
         setUsername(selected.label)
+        setUserSurname(selected_user.surname)
       };
     let options = []
     if (users) {
@@ -42,7 +44,7 @@ export const SelectUser = ({users, setCreateTask}) => {
                 (
                 <div>
                     {
-                        <TasksTable array={selectedTasks} userName={username} createTask={setCreateTask}/>
+                        <TasksTable array={selectedTasks} userName={username} userSurname={userSurname} createTask={setCreateTask} setInputObject={setInputObject}/>
                     }
                 </div>
                 )     

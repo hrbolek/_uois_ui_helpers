@@ -40,8 +40,16 @@ export const HomePage = (props) =>  {
 
   }
 
+  const [inputObject, setInputObject] = useState({})
 
   const [creatingTask, setCreateTask] = useState(false)
+
+const settingInputObject = (event) => {
+  console.log("input objeeeect")
+  console.log(event)
+  setInputObject(event)
+}
+
   const createTask = (event) => {
     setCreateTask(!creatingTask)
   }
@@ -58,11 +66,11 @@ export const HomePage = (props) =>  {
           <button onClick={studentClick} className="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
-        { Boolean(studentShown % 2) && <SelectUser users={users} setCreateTask={createTask} />} 
+        { Boolean(studentShown % 2) && <SelectUser users={users} setCreateTask={createTask} setInputObject={settingInputObject}/>} 
         { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
         { teacherShown && <TaskInputModal showModal={teacherShown} setModal={setTeacherShown}/>}
 
-        {creatingTask && <TaskInputModal showModal={creatingTask} setModal={setCreateTask} />}
+        {creatingTask && <TaskInputModal showModal={creatingTask} setModal={setCreateTask} readOnly={inputObject.readOnly} userName={inputObject.userName} userSurname={inputObject.userSurname}/>}
         
       </div>
     )
