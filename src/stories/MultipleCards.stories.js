@@ -1,4 +1,4 @@
-import { MultipleCards } from "../components/AssignmentsTable"
+import { MultipleCards } from "../components/Tasks/TasksTable"
 import { Assignments } from "./DataStructures"
 
 

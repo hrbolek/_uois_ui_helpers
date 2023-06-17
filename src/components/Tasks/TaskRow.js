@@ -7,7 +7,7 @@ function formatDate(date) {
 
   return `${day}.${month}.${year}`;
 }
-export const AssignmentsRow = ({index, name, detailedDesc, reference, dateOfEntry, dateOfSubmission, briefDesc, id }) => {
+export const TaskRow = ({index, name, detailedDesc, reference, dateOfEntry, dateOfSubmission, briefDesc, id }) => {
     const today = new Date().getTime();
     let deadline_color = "red";
     if (today < dateOfSubmission) {

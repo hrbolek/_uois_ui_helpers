@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactSelect from 'react-select';
-import { MultipleAssignments} from "./AssignmentsTable";
+import { TasksTable } from "./Tasks/TasksTable";
 
 export const SelectGroup = ({groups}) => {
     console.log(groups)
@@ -25,7 +25,7 @@ export const SelectGroup = ({groups}) => {
                 selectedGroup &&
                 (
                 <div>
-                    <MultipleAssignments array={selectedGroupTasks} />
+                    <TasksTable array={selectedGroupTasks} />
                 </div>
                 )     
             }

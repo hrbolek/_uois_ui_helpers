@@ -1,18 +1,18 @@
-import { AssignmentsRow } from "./AssignmentsRow"
+import { TaskRow } from "./TaskRow"
 import { Card, Stack } from "react-bootstrap"
 import { CardGroup } from "react-bootstrap";
-import { Assignments } from "../stories/DataStructures"
+import { Assignments } from "../../stories/DataStructures"
 
 //const array = Assignments.all
 //multiplecard
-export const MultipleAssignments = (props) => {
+export const TasksTable = (props) => {
     console.log(props.array.length)
+    console.log(props.userName)
     return (
-
         <table className="table" >
             <thead className="thead">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col" style={{color:"blue"}}>{props.userName}</th>
                     <th scope="col">název</th>
                     <th scope="col">datum zadání</th>
                     <th scope="col">datum odevzdání</th>
@@ -25,11 +25,10 @@ export const MultipleAssignments = (props) => {
             <tbody>
 
                 {props.array?.map((element, index) => (
-                    <AssignmentsRow key={element.id} index={index} {...element} />
+                    <TaskRow key={element.id} index={index} {...element} />
                     ))}
             </tbody>
         </table>
-
 
     )
 }   

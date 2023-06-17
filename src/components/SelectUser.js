@@ -2,8 +2,8 @@
 import React from "react"
 import ReactSelect from 'react-select';
 import { useState } from "react";
-import { AssignmentsCard } from "./AssignmentsRow";
-import { MultipleAssignments } from "./AssignmentsTable";
+import { AssignmentsCard } from "./Tasks/TaskRow";
+import { TasksTable } from "./Tasks/TasksTable";
 
 const createColumns = (items, columns) => {
     const result = [];
@@ -20,10 +20,13 @@ export const SelectUser = ({users}) => {
     console.log("printing students")
     console.log(users)
     const [selectedTasks, setSelectedTasks] = useState();
+    const [username, setUsername] = useState()
+
     const handleSelectChange = (selected) => {
         const selected_user = users[selected.value]
         const all_tasks = selected_user.tasks
         setSelectedTasks(all_tasks)
+        setUsername(selected.label)
       };
     let options = []
     if (users) {
@@ -39,7 +42,7 @@ export const SelectUser = ({users}) => {
                 (
                 <div>
                     {
-                        <MultipleAssignments array={selectedTasks}/>
+                        <TasksTable array={selectedTasks} userName={username}/>
                     }
                 </div>
                 )     

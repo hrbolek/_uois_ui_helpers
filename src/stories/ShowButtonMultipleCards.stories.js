@@ -1,5 +1,5 @@
-import { MultipleCards } from "../components/AssignmentsTable"
-import { AssignmentsCard } from "../components/AssignmentsRow"
+import { MultipleCards } from "../components/Tasks/TasksTable"
+import { AssignmentsCard } from "../components/Tasks/TaskRow"
 import {ShowButton} from "../components/ShowButton"
 import { Assignments, Students } from "./DataStructures"
 import { Card } from "react-bootstrap"
