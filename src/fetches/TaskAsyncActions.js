@@ -1,5 +1,6 @@
 import { TaskPageQuery } from "queries/TaskPageQuery"
 import { TaskActions } from "reducers/TaskReducers"
+import { UserActions } from "reducers/UserReducers"
 
 export const TasksFetchHelper = (query, resultSelector, dispatch, getState) => {
     const p = query()
@@ -74,6 +75,7 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
         )
         .then(
             json => {
+                console.log(json)
                 const msg = json.data.taskInsert.msg
                 if (msg === "fail") {
                     console.log("Insert selhalo")
@@ -81,6 +83,7 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
                     //mame hlasku, ze ok, musime si prebrat token (lastchange) a pouzit jej pro priste
                     const lastchange = json.data.taskInsert.task.lastchange
                     dispatch(TaskActions.insertTask({...task, lastchange: lastchange}))
+                    dispatch(UserActions.addTask(json.data.taskInsert.task))
                 }
                 return json
             }

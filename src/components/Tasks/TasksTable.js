@@ -2,23 +2,23 @@ import { TaskRow } from "./TaskRow"
 import { Card, Stack } from "react-bootstrap"
 import { CardGroup } from "react-bootstrap";
 import { Assignments } from "../../stories/DataStructures"
+import { useEffect } from "react";
 
 //const array = Assignments.all
 //multiplecard
-export const TasksTable = (props) => {
-
+export const TasksTable = ({user, setUser, createTask}) => {
     const handleCreateTask = (event) => {
         //into create task add default values for name and surname which cannot be changed - multiple task should have default values
-        props.createTask()
-        console.log(props.userSurname)
-        props.setInputObject({readOnly:true, userName:props.userName, userSurname:props.userSurname})
+        createTask()
+        setUser({readOnly:true, ...user})
     }
+
 
     return (
         <table className="table" >
             <thead className="thead">
                 <tr>
-                    <th scope="col" style={{color:"blue"}}>{props.userName}</th>
+                    <th scope="col" style={{color:"blue"}}>{user.name} {user.surname}</th>
                     <th scope="col">název</th>
                     <th scope="col">datum zadání</th>
                     <th scope="col">datum odevzdání</th>
@@ -30,7 +30,7 @@ export const TasksTable = (props) => {
             </thead>
             <tbody>
 
-                {props.array?.map((element, index) => (
+                {user.tasks?.map((element, index) => (
                     <TaskRow key={element.id} index={index} {...element} />
                     ))}
             </tbody>

@@ -4,6 +4,7 @@ import ReactSelect from 'react-select';
 import { useState } from "react";
 import { AssignmentsCard } from "./Tasks/TaskRow";
 import { TasksTable } from "./Tasks/TasksTable";
+import { useEffect } from "react";
 
 const createColumns = (items, columns) => {
     const result = [];
@@ -16,35 +17,32 @@ const createColumns = (items, columns) => {
     return result;
   };
 
-export const SelectUser = ({users, setCreateTask, setInputObject}) => {
-    console.log("printing students")
-    console.log(users)
-    const [selectedTasks, setSelectedTasks] = useState();
-    const [username, setUsername] = useState()
-    const [userSurname, setUserSurname] = useState()
+export const SelectUser = ({users, setCreateTask, setUser}) => {
+    const [selectedUser, setSelectedUser] = useState()
 
     const handleSelectChange = (selected) => {
-        const selected_user = users[selected.value]
-        const all_tasks = selected_user.tasks
-        setSelectedTasks(all_tasks)
-        setUsername(selected.label)
-        setUserSurname(selected_user.surname)
+        setSelectedUser(users[selected.value])
       };
     let options = []
     if (users) {
         options = Object.entries(users).map(user => ({label: user[1].name, value: user[1].id}))
     }
 
+
+
+    
+    
+
     return (
         <div>
            Vyber studenta, jehož úkoly hledáš!
             <ReactSelect options={options} onChange={handleSelectChange} placeholder="Vyber studenta"/>
             {
-                selectedTasks &&
+                selectedUser &&
                 (
                 <div>
                     {
-                        <TasksTable array={selectedTasks} userName={username} userSurname={userSurname} createTask={setCreateTask} setInputObject={setInputObject}/>
+                        <TasksTable user={selectedUser} createTask={setCreateTask} setUser={setUser}/>
                     }
                 </div>
                 )     

@@ -2,15 +2,19 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 
-export const WriteInput = (props) => {
+export const WriteInput = ({name, username, readOnly, setTaskAtribute}) => {
+  const handleChange = (event) => {
+    setTaskAtribute(event.target.value)
+  }
+
   const readOnlyInput = () => {
-    if (props.readOnly) {
+    if (readOnly) {
       return (
-        <input type="email" className="form-control" defaultValue={props.userName} readOnly />
+        <input type="text" className="form-control" defaultValue={username} readOnly />
       )
     } else {
       return (
-        <input type="email" className="form-control"  placeholder={props.name} />
+        <input type="text" className="form-control"  placeholder={name} onChange={handleChange}/>
       )
     }
   }
@@ -18,7 +22,7 @@ export const WriteInput = (props) => {
   return (
       <form>
         <div className="form-group">
-          <small className="form-text text-muted">Zadejte {props.name}</small>
+          <small className="form-text text-muted">Zadejte {name}</small>
           {readOnlyInput()}
         </div>
 

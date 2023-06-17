@@ -26,6 +26,12 @@ export const userSlice = createSlice({
             console.log(action.payload)
             action.payload.map(item => state[item.id] = {...item})
             return state
+        },
+        addTask: (state, action) => {
+            const userId = action.payload.user.id
+            const oldTasks = state[userId].tasks
+            state[userId].tasks = [...oldTasks, action.payload]
+            return state
         }
     }
 })

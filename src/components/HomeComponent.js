@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { TryItComponent } from "./TryItComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SelectUser } from "./SelectUser";
 import { TaskPageQuery } from "queries/TaskPageQuery";
 import { TaskActions } from "reducers/TaskReducers";
@@ -40,19 +40,18 @@ export const HomePage = (props) =>  {
 
   }
 
-  const [inputObject, setInputObject] = useState({})
+  const [user, setUser] = useState({})
 
   const [creatingTask, setCreateTask] = useState(false)
 
-const settingInputObject = (event) => {
-  console.log("input objeeeect")
-  console.log(event)
-  setInputObject(event)
+const setUserCallback = (event) => {
+  setUser(event)
 }
 
   const createTask = (event) => {
     setCreateTask(!creatingTask)
   }
+
 
 
 //homepage creating
@@ -66,11 +65,11 @@ const settingInputObject = (event) => {
           <button onClick={studentClick} className="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Zobrazovač</button>
         </li>
       </ul>
-        { Boolean(studentShown % 2) && <SelectUser users={users} setCreateTask={createTask} setInputObject={settingInputObject}/>} 
+        { Boolean(studentShown % 2) && <SelectUser users={users} setCreateTask={createTask} setUser={setUserCallback}/>} 
         { Boolean(studentShown % 2) && <SelectGroup groups={groups}/>}
         { teacherShown && <TaskInputModal showModal={teacherShown} setModal={setTeacherShown}/>}
 
-        {creatingTask && <TaskInputModal showModal={creatingTask} setModal={setCreateTask} readOnly={inputObject.readOnly} userName={inputObject.userName} userSurname={inputObject.userSurname}/>}
+        {creatingTask && <TaskInputModal showModal={creatingTask} setModal={setCreateTask} user={user}/>}
         
       </div>
     )

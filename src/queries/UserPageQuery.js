@@ -13,6 +13,7 @@ export const UserPageQueryJSON = () => ({
             surname
             tasks {
               id
+              lastchange
               name
               briefDesc
               detailedDesc
