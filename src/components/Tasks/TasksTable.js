@@ -2,11 +2,14 @@ import { TaskRow } from "./TaskRow"
 import { Card, Stack } from "react-bootstrap"
 import { CardGroup } from "react-bootstrap";
 import { Assignments } from "../../stories/DataStructures"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { TaskInputModal } from "components/TaskInputModal";
 
 //const array = Assignments.all
 //multiplecard
+
+
 export const TasksTable = ({userId, actions}) => {
     const users = useSelector(state => state.users)
     //if userId changed -useEffect, fetch his tasks
@@ -16,14 +19,25 @@ export const TasksTable = ({userId, actions}) => {
             actions.userTasksFetch(userId)
         }, [userId]
     )
-    const user = users[userId]
+    
+    const [showModal, setShowModal] = useState(false)
+
+    const addTask = (event) => {
+        setShowModal(true)
+    }
+
+    let user = users[userId]
     if (user?.tasks) {
         return (
             <div>
                 <table className="table" >
                     <thead className="thead">
                         <tr>
-                            <th scope="col" style={{color:"blue"}}>{user?.name} {user?.surname}</th>
+                            <th scope="col" style={{color:"blue"}}>
+                                <button type="button" className="btn btn-outline-success btn-sm" onClick={addTask}>přidej úkol</button>
+                                <span style={{"marginRight":"10px"}} />
+                                {user?.name} {user?.surname}
+                                </th>
                             <th scope="col">název</th>
                             <th scope="col">datum zadání</th>
                             <th scope="col">datum odevzdání</th>
@@ -40,7 +54,7 @@ export const TasksTable = ({userId, actions}) => {
                             ))}
                     </tbody>
                 </table>
-                <button type="button" className="btn btn-success">+úkol</button>
+                <TaskInputModal showModal={showModal} setModal={setShowModal} user={user}/>
             </div>
         )
     } else {

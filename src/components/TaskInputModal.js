@@ -10,7 +10,7 @@ export const TaskInputModal = ({showModal, setModal, user}) => {
   const dispatch = useDispatch()
 
   const handleClose = () => {
-    setModal(!showModal)
+    setModal(false)
   };
 
   const saveChanges = () => {
