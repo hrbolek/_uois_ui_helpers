@@ -11,6 +11,7 @@ export const GroupSelectInteractive = ({actions}) => {
     const handleInputChange = (value) => {
         //performs short fetch by letters
         actions.partGroupsFetch(value)
+        setSelectedGroupId(null)
     }
 
     const handleSelectChange = (selected) => {
