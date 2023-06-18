@@ -11,7 +11,7 @@ import { DateInput } from 'components/Tasks/TaskDateFulfillmentInput';
 import { TryItComponent } from 'components/TryItComponent';
 import { HomePage } from 'components/HomeComponent';
 import { MultipleInput } from 'components/MultipleInput'; 
-import { TextInput } from 'components/Tasks/DummyInput';
+import { TextInput } from 'components/Tasks/TaskDummyInput';
 import {HomeComponent} from 'components/HomeComponent';
 import { HomeRadio } from 'components/HomeRadio';
 

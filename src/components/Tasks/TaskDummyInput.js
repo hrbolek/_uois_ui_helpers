@@ -1,5 +1,5 @@
 
-export const DummyInput = ({name, userName}) => {
+export const TaskDummyInput = ({name, userName}) => {
   return (
       <form>
         <div className="form-group">

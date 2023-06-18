@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { UsersFetch } from "fetches/UserAsyncActions";
 import { GroupsFetch } from "fetches/GroupAsyncActions";
 import { SelectGroup } from "./SelectGroup";
-import { WriteInput } from "./Tasks/DummyInput";
+import { WriteInput } from "./Tasks/TaskDummyInput";
 import { MultipleInput } from "./MultipleInput";
 import { TaskInputModal } from "./TaskInputModal";
 // creating a homepage

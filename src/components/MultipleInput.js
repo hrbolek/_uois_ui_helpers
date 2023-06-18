@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DateInput, TaskDateFulfillmentInput } from "./Tasks/TaskDateFulfillmentInput";
-import { DummyInput } from "./Tasks/DummyInput";
+import { TaskDummyInput } from "./Tasks/TaskDummyInput";
 import { DescriptionInput } from "./DescriptionInput";
 import { DatePicker } from "./Tasks/TaskDateSubmissionInput";
 import { TaskNameInput } from "./Tasks/TaskNameInput";
@@ -45,10 +45,10 @@ export const MultipleInput= ({user, setTask, task}) => {
     <div>
       <div style={{ display: 'flex'}}>
           <div style={{flex: 1, backgroundColor: 'lightblue'}}>
-              <DummyInput name="jméno" userName={user.name}/>
+              <TaskDummyInput name="jméno" userName={user.name}/>
           </div>
           <div style={{flex: 1, backgroundColor: 'lightblue'}}>
-              <DummyInput name="příjmení" userName={user.surname}/>
+              <TaskDummyInput name="příjmení" userName={user.surname}/>
           </div>
         </div>
 
