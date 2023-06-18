@@ -26,7 +26,7 @@ export const GroupSelectInteractive = ({actions}) => {
         }))
     }
 
-    const placeholder = "Vyberte učební skupinu " + options.length
+    const placeholder = "Vyberte učební skupinu z nabídky " + options.length
 
     return (
         <div>

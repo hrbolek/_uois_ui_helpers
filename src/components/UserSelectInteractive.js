@@ -25,7 +25,7 @@ export const UserSelectInteractive = ({actions}) => {
         }))
     }
 
-    const placeholder = "Vyberte studenta " + options.length
+    const placeholder = "Vyberte studenta z nabídky " + options.length
     return (
         <div>
             <TextInput placeholder="Zadejte jméno nebo příjmení studenta" onChange={handleInputChange} value=""/>

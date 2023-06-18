@@ -14,12 +14,12 @@ export const TaskInputModal = ({showModal, setModal, user, actions}) => {
 
   const saveChanges = () => {
     const tmpTask = {userId: "2d9dc5ca-a4a2-11ed-b9df-0242ac120003", name: "newName",
-      briefDes: "new brief descriptionnn", detailedDes: "new dettttt", reference: "www.google.com",
+      briefDes: "new brief descriptionnn", detailedDes: "newdetailedtt", reference: "www.google.com",
       dateOfSubmission: "2023-05-30T05:59:32.689363", dateOfFulfillment: "2023-05-30T05:59:32.689363"
     }
     //console.log(newTask)
     actions.addTask(tmpTask)
-    actions.addTask(newTask)
+    //actions.addTask(newTask)
     setModal(false)
   }
 
