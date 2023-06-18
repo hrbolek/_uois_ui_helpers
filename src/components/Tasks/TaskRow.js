@@ -17,7 +17,7 @@ export const TaskRow = ({index, name, detailedDesc, reference, dateOfEntry, date
   
     const dateEntryTD = new Date(dateOfEntry);
     const dateSubmissionTD = new Date(dateOfSubmission);
-    console.log("row rendered")
+    console.log("row rendered", index)
     // Creating a row layout
     return (
       <tr>

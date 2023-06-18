@@ -6,7 +6,6 @@ import { GroupTasks } from "./Tasks/GroupTasks";
 
 export const GroupSelectInteractive = ({actions}) => {
     const groups = useSelector(state => state.groups)
-    const users = useSelector(state => state.users)
     const [selectedGroupId, setSelectedGroupId] = useState(null)
 
     const handleInputChange = (value) => {
@@ -33,7 +32,7 @@ export const GroupSelectInteractive = ({actions}) => {
         <div>
             <TextInput placeholder="Zadejte zkratku učební skupiny" onChange={handleInputChange} value=""/>
             {options.length > 0 && <ReactSelect options={options} placeholder={placeholder} onChange={handleSelectChange} value={null} />}
-            <GroupTasks groupId={selectedGroupId} actions={actions} groups={groups} user={users}/>
+            {Boolean(selectedGroupId) && <GroupTasks groupId={selectedGroupId} actions={actions} groups={groups}/>}
         </div>
     )
 }

@@ -7,24 +7,17 @@ import { useSelector } from "react-redux";
 
 //const array = Assignments.all
 //multiplecard
-export const TasksTable = ({userId, actions, users}) => {
-    console.log(userId)
+export const TasksTable = ({userId, actions}) => {
+    const users = useSelector(state => state.users)
     //if userId changed -useEffect, fetch his tasks
     useEffect(
         () => {
             //fetch his tasks by userId
-            if (userId) {
-                actions.userTasksFetch(userId)
-            }
+            actions.userTasksFetch(userId)
         }, [userId]
     )
-    let user = null
-    if (userId) {
-        user = users[userId]
-
-    }
-
-    if (user) {
+    const user = users[userId]
+    if (user?.tasks) {
         return (
             <div>
                 <table className="table" >
@@ -41,13 +34,19 @@ export const TasksTable = ({userId, actions, users}) => {
                         
                     </thead>
                     <tbody>
-    
+                        
                         {user?.tasks?.map((element, index) => (
                             <TaskRow key={element.id} index={index} {...element} />
                             ))}
                     </tbody>
                 </table>
                 <button type="button" className="btn btn-success">+úkol</button>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                Načítám úkoly...
             </div>
         )
     }
