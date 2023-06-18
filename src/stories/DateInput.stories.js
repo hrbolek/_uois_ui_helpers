@@ -1,5 +1,5 @@
 
-import { DateInput } from "../components/DateInput"
+import { DateInput } from "../components/Tasks/TaskDateFulfillmentInput"
 
 export default {
     title: "Date input",

@@ -9,14 +9,14 @@ function formatDate(date) {
 }
 export const TaskRow = ({index, name, detailedDesc, reference, dateOfEntry, dateOfSubmission, briefDesc, id }) => {
     const today = new Date().getTime();
+    
+    const dateEntryTD = new Date(dateOfEntry);
+    const dateSubmissionTD = new Date(dateOfSubmission);
     let deadline_color = "red";
-    if (today < dateOfSubmission) {
+    if (today < dateSubmissionTD) {
       // deadline in the future
       deadline_color = "green";
     }
-  
-    const dateEntryTD = new Date(dateOfEntry);
-    const dateSubmissionTD = new Date(dateOfSubmission);
     console.log("row rendered", index)
     // Creating a row layout
     return (

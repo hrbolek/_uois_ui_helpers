@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { DateInput } from "./DateInput";
-import { WriteInput } from "./WriteInput";
+import { DateInput, TaskDateFulfillmentInput } from "./Tasks/TaskDateFulfillmentInput";
+import { DummyInput } from "./Tasks/DummyInput";
 import { DescriptionInput } from "./DescriptionInput";
-import { DatePicker } from "./DatePicker";
+import { DatePicker } from "./Tasks/TaskDateSubmissionInput";
+import { TaskNameInput } from "./Tasks/TaskNameInput";
+import { TaskBriefDescriptionInput } from "./Tasks/TaskBriefDescriptionInput";
+import { TaskDetailedDescriptionInput } from "./Tasks/TaskDetailedDescriptionInput";
+import { TaskReferenceInput } from "./Tasks/TaskReferenceInput";
+import { TaskDateSubmissionInput } from "./Tasks/TaskDateSubmissionInput";
 
 const dateStyle = {
   flex: 1,
@@ -38,39 +43,29 @@ export const MultipleInput= ({user, setTask, task}) => {
   const width = "160px"
   return (
     <div>
-      <div style={ {
-      display: 'flex',
-            }}>
-          <div style={ {
-                flex: 1,
-                backgroundColor: 'lightblue',
-              }}>
-            <WriteInput name = "jméno" width={width} placeholder="sometext" username={user?.name} readOnly={user?.readOnly}/>
+      <div style={{ display: 'flex'}}>
+          <div style={{flex: 1, backgroundColor: 'lightblue'}}>
+              <DummyInput name="jméno" userName={user.name}/>
           </div>
-          <div style={ {
-                flex: 1,
-                backgroundColor: 'lightblue',
-              }}>
-            <WriteInput name = "příjmení" width={width} username={user?.surname} readOnly={user?.readOnly}/>
+          <div style={{flex: 1, backgroundColor: 'lightblue'}}>
+              <DummyInput name="příjmení" userName={user.surname}/>
           </div>
         </div>
-        <WriteInput name = "název úkolu" setTaskAtribute={handleNameChange}/>
-        <WriteInput name = "stručný popis úkolu" setTaskAtribute={handleBriefDescChange}/>
 
-        <DescriptionInput name="úplný popis úkolu" setTaskAtribute={handleDetailedDescChange}/>
+        <TaskNameInput name="název úkolu" setTaskName={handleNameChange}/>
+        <TaskBriefDescriptionInput name="stručný popis úkolu" setTaskBriefDescription={handleBriefDescChange}/>
 
-        <WriteInput name = "odkaz na stránku" setTaskAtribute={handleReferenceChange}/>
+        <TaskDetailedDescriptionInput name="úplný popis úkolu" setTaskDetailedDescription={handleDetailedDescChange}/>
 
-        <div style={ {
-      display: 'flex',
-            }}>
+        <TaskReferenceInput name="odkaz na stránku" setTaskReference={handleReferenceChange}/>
 
+        <div style={{display: 'flex'}}>
           <div style={dateStyle}>
-            <DatePicker name="Datum odevzdání:" setTaskAtribute={handleDateOfSubmissionChange}/>
+            <TaskDateSubmissionInput name="Datum odevzdání:" setTaskDateSubmission={handleDateOfSubmissionChange}/>
           </div>
 
           <div style={dateStyle}>
-            <DatePicker name="Datum naplnění:" setTaskAtribute={handleDateofFulfillmentChange}/>
+            <TaskDateFulfillmentInput name="Datum naplnění:" setTaskDateFulfillment={handleDateofFulfillmentChange}/>
             </div>      
         </div>
     </div> 

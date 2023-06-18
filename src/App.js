@@ -7,11 +7,11 @@ import { LoadUserData} from 'components/ButtonLoadUserData';
 import { LoadTaskData } from 'components/ButtonLoadTaskData';
 import { ButtonAddTask } from 'components/ButtonAddTask';
 import { TaskLoader } from 'components/TaskLoader';
-import { DateInput } from 'components/DateInput';
+import { DateInput } from 'components/Tasks/TaskDateFulfillmentInput';
 import { TryItComponent } from 'components/TryItComponent';
 import { HomePage } from 'components/HomeComponent';
 import { MultipleInput } from 'components/MultipleInput'; 
-import { TextInput } from 'components/WriteInput';
+import { TextInput } from 'components/Tasks/DummyInput';
 import {HomeComponent} from 'components/HomeComponent';
 import { HomeRadio } from 'components/HomeRadio';
 

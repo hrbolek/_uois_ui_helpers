@@ -1,5 +1,5 @@
 
-export const TaskNameInput = ({setTaskName}) => {
+export const TaskNameInput = ({name, setTaskName}) => {
     const handleChange = (event) => {
       setTaskName(event.target.value)
     }

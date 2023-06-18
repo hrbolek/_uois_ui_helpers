@@ -1,8 +1,8 @@
 
 
-export const TaskLinkInput = ({setTaskLink}) => {
+export const TaskReferenceInput = ({name, setTaskReference}) => {
     const handleChange = (event) => {
-      setTaskLink(event.target.value)
+      setTaskReference(event.target.value)
     }
   
     return (
