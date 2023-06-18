@@ -12,7 +12,11 @@ export const GroupTaskInputModal = ({showModal, setModal, group, actions, member
 
     const saveChanges = () => {
         //for loop memberships, to newTask add {userId: member.id}, call actions.addTask(newTask)
-        console.log("group task atribute",newTask)
+        
+        const iterTask = newTask
+        memberships.map(member => {
+            actions.addTask({...iterTask, userId:member.user.id})
+        })
         handleClose()
     }
 

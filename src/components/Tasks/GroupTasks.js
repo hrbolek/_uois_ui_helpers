@@ -23,7 +23,7 @@ export const GroupTasks = ({groupId, actions, groups}) => {
 
     return (
         <div>
-            <button type="button" className="btn btn-outline-success btn-sm" onClick={addTask}>přidejte úkol skupině {groups[groupId]?.name}</button>
+            {Boolean(group) && <button type="button" className="btn btn-outline-success btn-sm" onClick={addTask}>přidejte úkol skupině {groups[groupId]?.name}</button>}
                                 
             {memberships?.map(
                 (m, index) => <TasksTable key={index} userId={m.user.id} actions={actions}/>
