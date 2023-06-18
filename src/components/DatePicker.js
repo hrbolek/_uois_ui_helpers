@@ -18,7 +18,6 @@ const handleDateChanged = (event) => {
     {name}
     </div>
     <input type="date" min={minDate} max={maxDate} onChange={handleDateChanged}/>
-
   </label>
 </form>
   )

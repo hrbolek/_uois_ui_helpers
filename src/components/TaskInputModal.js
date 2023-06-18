@@ -5,6 +5,7 @@ import { TaskAsyncInsert } from 'fetches/TaskAsyncActions';
 import { useDispatch } from 'react-redux';
 
 
+
 export const TaskInputModal = ({showModal, setModal, user, actions}) => {
   const [newTask, setNewTask] = useState({userId:user.id})
 
