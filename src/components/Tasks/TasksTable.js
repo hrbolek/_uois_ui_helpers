@@ -4,7 +4,7 @@ import { CardGroup } from "react-bootstrap";
 import { Assignments } from "../../stories/DataStructures"
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { TaskInputModal } from "components/TaskInputModal";
+import { UserTaskInputModal } from "components/UserTaskInputModal";
 
 //const array = Assignments.all
 //multiplecard
@@ -53,7 +53,7 @@ export const TasksTable = ({userId, actions}) => {
                             ))}
                     </tbody>
                 </table>
-                <TaskInputModal showModal={showModal} setModal={setShowModal} user={user} actions={actions}/>
+                <UserTaskInputModal showModal={showModal} setModal={setShowModal} user={user} actions={actions}/>
             </div>
         )
     } else {

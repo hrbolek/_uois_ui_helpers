@@ -9,10 +9,8 @@ import { ButtonAddTask } from 'components/ButtonAddTask';
 import { TaskLoader } from 'components/TaskLoader';
 import { DateInput } from 'components/Tasks/TaskDateFulfillmentInput';
 import { TryItComponent } from 'components/TryItComponent';
-import { HomePage } from 'components/HomeComponent';
-import { MultipleInput } from 'components/MultipleInput'; 
+import { MultipleInputs } from 'components/UserTaskInputs'; 
 import { TextInput } from 'components/Tasks/TaskDummyInput';
-import {HomeComponent} from 'components/HomeComponent';
 import { HomeRadio } from 'components/HomeRadio';
 
 /*
