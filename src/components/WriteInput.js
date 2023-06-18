@@ -3,6 +3,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 
 export const WriteInput = ({name, username, readOnly, setTaskAtribute}) => {
+  console.log("its read only ",readOnly)
   const handleChange = (event) => {
     setTaskAtribute(event.target.value)
   }

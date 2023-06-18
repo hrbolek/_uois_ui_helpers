@@ -13,6 +13,7 @@ import { HomePage } from 'components/HomeComponent';
 import { MultipleInput } from 'components/MultipleInput'; 
 import { TextInput } from 'components/WriteInput';
 import {HomeComponent} from 'components/HomeComponent';
+import { HomeRadio } from 'components/HomeRadio';
 
 /*
 function getData (id= "adde473d-5c78-4171-bf16-8e7f97bef5f9") {
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <AppProvider>
-          <HomePage />
+          <HomeRadio />
       </AppProvider>
       
     </div>
