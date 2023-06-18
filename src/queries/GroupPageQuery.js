@@ -1,4 +1,4 @@
-import { authorizedFetch } from './authorizedFetch'
+import { authorizedFetch } from '../fetches/authorizedFetch'
 
 /**
  * Funkce

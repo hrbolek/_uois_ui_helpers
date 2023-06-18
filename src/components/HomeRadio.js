@@ -2,9 +2,10 @@ import { useState } from "react"
 import { UserSelectInteractive } from "./UserSelectInteractive"
 import {actions } from "../utils/store"
 import { UserAsyncSelectInput } from "./UserAsyncSelectInput"
+import { GroupSelectInteractive } from "./GroupSelectInteractive"
 
 export const HomeRadio = (props) => {
-    const [selectedOption, setSelectedOption] = useState("show")
+    const [selectedOption, setSelectedOption] = useState("student")
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value)
@@ -13,34 +14,35 @@ export const HomeRadio = (props) => {
 
     return (
         <div className="container">
-            <h2>Vyber akci</h2>
+            <h2>Vyberte úkoly</h2>
                 <input
                     type="radio"
                     className="form-check-input"
-                    id="show"
-                    value="show"
-                    checked={selectedOption === "show"}
+                    id="student"
+                    value="student"
+                    checked={selectedOption === "student"}
                     onChange={handleOptionChange}
                 />
-                <label className="form-check-label" htmlFor="show">
-                Zobraz úkoly
+                <label className="form-check-label" htmlFor="student">
+                Studenta
                 </label>
                 
                 <span style={{"marginRight":"10px"}} />
-                <label className="form-check-label" htmlFor="edit">
-                 Edituj úkoly
+                <label className="form-check-label" htmlFor="group">
+                Učební skupiny
                 </label>
                 <input
                     type="radio"
                     className="form-check-input"
-                    id="edit"
-                    value="edit"
-                    checked={selectedOption === "edit"}
+                    id="group"
+                    value="group"
+                    checked={selectedOption === "group"}
                     onChange={handleOptionChange}
                     />
-                    {selectedOption === "show" && <UserSelectInteractive actions={actions}/>}
+                    {selectedOption === "student" && <UserSelectInteractive actions={actions}/>}
+                    {selectedOption === "group" && <GroupSelectInteractive actions={actions}/>}
         </div>
     )
-    //{selectedOption === "show" && <UserAsyncSelectInput actions={actions}/>}
+    //{selectedOption === "student" && <UserAsyncSelectInput actions={actions}/>}
     
 }

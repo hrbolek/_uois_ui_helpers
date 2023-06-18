@@ -3,39 +3,52 @@ import { Card, Stack } from "react-bootstrap"
 import { CardGroup } from "react-bootstrap";
 import { Assignments } from "../../stories/DataStructures"
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 //const array = Assignments.all
 //multiplecard
-export const TasksTable = ({user, setUser, createTask}) => {
-    const handleCreateTask = (event) => {
-        //into create task add default values for name and surname which cannot be changed - multiple task should have default values
-        createTask()
-        setUser({readOnly:true, ...user})
+export const TasksTable = ({userId, actions, users}) => {
+    console.log(userId)
+    //if userId changed -useEffect, fetch his tasks
+    useEffect(
+        () => {
+            //fetch his tasks by userId
+            if (userId) {
+                actions.userTasksFetch(userId)
+            }
+        }, [userId]
+    )
+    let user = null
+    if (userId) {
+        user = users[userId]
+
     }
 
-
-    return (
-        <table className="table" >
-            <thead className="thead">
-                <tr>
-                    <th scope="col" style={{color:"blue"}}>{user.name} {user.surname}</th>
-                    <th scope="col">název</th>
-                    <th scope="col">datum zadání</th>
-                    <th scope="col">datum odevzdání</th>
-                    <th scope="col">popis</th>
-                    <th scope="col">detailní popis</th>
-                    <th scope="col">odkaz</th>
-                </tr>
-                
-            </thead>
-            <tbody>
-
-                {user.tasks?.map((element, index) => (
-                    <TaskRow key={element.id} index={index} {...element} />
-                    ))}
-            </tbody>
-            <button type="button" class="btn btn-success" onClick={handleCreateTask}>+úkol</button>
-        </table>
-
-    )
+    if (user) {
+        return (
+            <div>
+                <table className="table" >
+                    <thead className="thead">
+                        <tr>
+                            <th scope="col" style={{color:"blue"}}>{user?.name} {user?.surname}</th>
+                            <th scope="col">název</th>
+                            <th scope="col">datum zadání</th>
+                            <th scope="col">datum odevzdání</th>
+                            <th scope="col">popis</th>
+                            <th scope="col">detailní popis</th>
+                            <th scope="col">odkaz</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+    
+                        {user?.tasks?.map((element, index) => (
+                            <TaskRow key={element.id} index={index} {...element} />
+                            ))}
+                    </tbody>
+                </table>
+                <button type="button" className="btn btn-success">+úkol</button>
+            </div>
+        )
+    }
 }   

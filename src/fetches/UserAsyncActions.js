@@ -1,8 +1,9 @@
 import { UserPageQuery } from "queries/UserPageQuery"
 import { UserActions } from "reducers/UserReducers"
 import {PartUsersQuery } from "queries/PartUsersQuery"
+import { UserTasksQuery } from "queries/UserTasksQuery"
 
-export const UsersFetchHelper = (query, resultSelector, dispatch, getState) => {
+const UsersFetchHelper = (query, resultSelector, dispatch, getState) => {
     const p = query()
         .then(
             response => response.json()
@@ -29,7 +30,7 @@ export const UsersFetch = () => (dispatch, getState) => {
 }
 
 
-export const PartUsersFetchHelper = (letters, query, resultSelector, dispatch, getState) => {
+const PartUsersFetchHelper = (letters, query, resultSelector, dispatch, getState) => {
     const result = query(letters)
         .then(
             response => response.json()
@@ -51,5 +52,28 @@ export const PartUsersFetch = (letters) => (dispatch, getState) => {
     }
     return bodyFunc()
 
+}
+
+const UserTasksFetchHelper = (userId, query, resultSelector, dispatch, getState) => {
+    const result = query(userId)
+        .then(
+            response => response.json()
+        )
+        .then(
+            json => resultSelector(json)
+        )
+        .then(
+            json => dispatch(UserActions.updateUser(json))
+        )
+    return result
+}
+
+export const UserTasksFetch = (userId) => (dispatch, getState) => {
+    const userByIdSelector = (json) => json.data.userById
+    const bodyFunc = async () => {
+        const userTasksData = await UserTasksFetchHelper(userId, UserTasksQuery, userByIdSelector, dispatch, getState)
+        return userTasksData
+    }
+    return bodyFunc()
 }
 
