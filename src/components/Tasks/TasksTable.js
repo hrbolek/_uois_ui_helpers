@@ -45,7 +45,6 @@ export const TasksTable = ({userId, actions}) => {
                             <th scope="col">detailní popis</th>
                             <th scope="col">odkaz</th>
                         </tr>
-                        
                     </thead>
                     <tbody>
                         
@@ -54,7 +53,7 @@ export const TasksTable = ({userId, actions}) => {
                             ))}
                     </tbody>
                 </table>
-                <TaskInputModal showModal={showModal} setModal={setShowModal} user={user}/>
+                <TaskInputModal showModal={showModal} setModal={setShowModal} user={user} actions={actions}/>
             </div>
         )
     } else {

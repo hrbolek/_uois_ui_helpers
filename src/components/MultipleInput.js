@@ -10,7 +10,6 @@ const dateStyle = {
 }
 
 export const MultipleInput= ({user, setTask, task}) => {
-  const [newName, setNewName] = useState()
   const handleNameChange = (newName) => {
     setTask({...task, name:newName})
   }

@@ -48,7 +48,6 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
                                 }
                                 user {
                                     id
-                                    name
                                 }
                             }
                         }

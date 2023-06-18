@@ -6,6 +6,7 @@ import taskReducer from "reducers/TaskReducers"
 import groupReducer from 'reducers/GroupReducers'
 import { PartUsersFetch, UserTasksFetch } from 'fetches/UserAsyncActions'
 import { PartGroupsFetch, GroupMembershipsFetch } from 'fetches/GroupAsyncActions'
+import { TaskAsyncInsert } from 'fetches/TaskAsyncActions'
 
 const initialState = {
     tasks: [
@@ -39,6 +40,8 @@ export const actions = {
     userTasksFetch: (userId) => dispatch(UserTasksFetch(userId)),
     partGroupsFetch: (letters) => dispatch(PartGroupsFetch(letters)),
     groupMembershipsFetch: (groupId) => dispatch(GroupMembershipsFetch(groupId)),
+    addTask: (newTask) => dispatch(TaskAsyncInsert(newTask)),
+
 }
 
 
