@@ -5,17 +5,22 @@ import { TaskAsyncInsert } from 'fetches/TaskAsyncActions';
 import { useDispatch } from 'react-redux';
 
 
-export const TaskInputModal = ({showModal, setModal, user}) => {
-  const [newTask, setNewTask] = useState()
-  const dispatch = useDispatch()
+
+export const TaskInputModal = ({showModal, setModal, user, actions}) => {
+  const [newTask, setNewTask] = useState({userId:user.id})
 
   const handleClose = () => {
-    setModal(!showModal)
+    setModal(false)
   };
 
   const saveChanges = () => {
-    console.log(newTask)
-    dispatch(TaskAsyncInsert(newTask))
+    const tmpTask = {userId: "2d9dc5ca-a4a2-11ed-b9df-0242ac120003", name: "newName",
+      briefDes: "new brief descriptionnn", detailedDes: "newdetailedtt", reference: "www.google.com",
+      dateOfSubmission: "2023-05-30T05:59:32.689363", dateOfFulfillment: "2023-05-30T05:59:32.689363"
+    }
+    //console.log(newTask)
+    actions.addTask(tmpTask)
+    //actions.addTask(newTask)
     setModal(false)
   }
 
