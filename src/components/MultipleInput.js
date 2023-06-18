@@ -55,12 +55,13 @@ export const MultipleInput= ({user, setTask, task}) => {
             <WriteInput name = "příjmení" width={width} username={user?.surname} readOnly={user?.readOnly}/>
           </div>
         </div>
+        
         <WriteInput name = "název úkolu" setTaskAtribute={handleNameChange}/>
+        
         <WriteInput name = "stručný popis úkolu" setTaskAtribute={handleBriefDescChange}/>
-
         <DescriptionInput name="úplný popis úkolu" setTaskAtribute={handleDetailedDescChange}/>
-
         <WriteInput name = "odkaz na stránku" setTaskAtribute={handleReferenceChange}/>
+       
 
         <div style={ {
       display: 'flex',
