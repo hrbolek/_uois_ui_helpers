@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { UserTaskInputs } from './UserTaskInputs';
-import { TaskAsyncInsert } from 'fetches/TaskAsyncActions';
-import { useDispatch } from 'react-redux';
 
 
 
@@ -18,7 +16,7 @@ export const UserTaskInputModal = ({showModal, setModal, user, actions}) => {
     actions.addTask(newTask)
     handleClose()
   }
-
+  //button should not take callBack, only params what and asyncAction (via actions props)
   return (
     <div>
       <Modal show={showModal} onHide={handleClose}>
