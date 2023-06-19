@@ -3,14 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AppProvider } from 'utils/store';
-import { LoadUserData} from 'components/ButtonLoadUserData';
-import { LoadTaskData } from 'components/ButtonLoadTaskData';
-import { ButtonAddTask } from 'components/ButtonAddTask';
-import { TaskLoader } from 'components/TaskLoader';
-import { DateInput } from 'components/Tasks/TaskDateFulfillmentInput';
-import { TryItComponent } from 'components/TryItComponent';
-import { MultipleInputs } from 'components/UserTaskInputs'; 
-import { TextInput } from 'components/Tasks/TaskDummyInput';
+
 import { HomeRadio } from 'components/HomeRadio';
 
 /*

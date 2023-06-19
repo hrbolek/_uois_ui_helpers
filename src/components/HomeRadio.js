@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { UserSelectInteractive } from "./UserSelectInteractive"
 import {actions } from "../utils/store"
-import { UserAsyncSelectInput } from "./UserAsyncSelectInput"
 import { GroupSelectInteractive } from "./GroupSelectInteractive"
 
 export const HomeRadio = (props) => {
