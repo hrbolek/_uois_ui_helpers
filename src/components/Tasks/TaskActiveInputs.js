@@ -10,8 +10,9 @@ const dateStyle = {
     flex: 1,
     backgroundColor: 'lightblue',
   }
-  
-export const TaskActiveInputs = ({setTask, task}) => {
+  //eveeeeennnnts do commit
+  //rename callbacks onNameChange
+export const TaskActiveInputs = ({setTask, task, actions}) => {
     const handleNameChange = (newName) => {
         setTask({...task, name:newName})
       }
@@ -35,10 +36,10 @@ export const TaskActiveInputs = ({setTask, task}) => {
       const handleDateofFulfillmentChange = (newFulDate) => {
         setTask({... task, dateOfFulfillment:newFulDate})
       }
-
+      //add actions, onTaskNameChange
     return (
         <div>
-            <TaskNameInput name="název úkolu" setTaskName={handleNameChange}/>
+            <TaskNameInput name="název úkolu" setTaskName={handleNameChange} task={task} />
             <TaskBriefDescriptionInput name="stručný popis úkolu" setTaskBriefDescription={handleBriefDescChange}/>
 
             <TaskDetailedDescriptionInput name="úplný popis úkolu" setTaskDetailedDescription={handleDetailedDescChange}/>
