@@ -1,8 +1,8 @@
 
 
-export const TaskReferenceInput = ({name, setTaskReference}) => {
+export const TaskReferenceInput = ({name, onReferenceChange}) => {
     const handleChange = (event) => {
-      setTaskReference(event.target.value)
+      onReferenceChange(event.target.value)
     }
   
     return (

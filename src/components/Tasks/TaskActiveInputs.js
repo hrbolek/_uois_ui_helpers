@@ -10,49 +10,50 @@ const dateStyle = {
     flex: 1,
     backgroundColor: 'lightblue',
   }
-  
-export const TaskActiveInputs = ({setTask, task}) => {  
+  //eveeeeennnnts do commit
+  //rename callbacks onNameChange
+export const TaskActiveInputs = ({setTask, task, actions}) => {  
   //callbacks
-    const handleNameChange = (newName) => {
+    const onNameChange = (newName) => {
         setTask({...task, name:newName})                 
       }
     
-      const handleBriefDescChange = (newBriefDesc) => {
+      const onBriefDescChange = (newBriefDesc) => {
         setTask({...task, briefDes:newBriefDesc})
       }
     
-      const handleDetailedDescChange = (newDetailedDesc) => {
+      const onDetailedDescChange = (newDetailedDesc) => {
         setTask({...task, detailedDes:newDetailedDesc})
       }
     
-      const handleReferenceChange = (newReference) => {
+      const onReferenceChange = (newReference) => {
         setTask({...task, reference:newReference})
       }
     
-      const handleDateOfSubmissionChange = (newSubDate) => {
+      const onDateOfSubmissionChange = (newSubDate) => {
         setTask({...task, dateOfSubmission:newSubDate})
       }
     
-      const handleDateofFulfillmentChange = (newFulDate) => {
+      const onDateofFulfillmentChange = (newFulDate) => {
         setTask({... task, dateOfFulfillment:newFulDate})
       }
-
+      //add actions, onTaskNameChange
     return (
         <div>
-            <TaskNameInput name="název úkolu" setTaskName={handleNameChange}/>
-            <TaskBriefDescriptionInput name="stručný popis úkolu" setTaskBriefDescription={handleBriefDescChange}/>
+            <TaskNameInput name="název úkolu" onNameChange={onNameChange} task={task} />
+            <TaskBriefDescriptionInput name="stručný popis úkolu" onBriefDescChange={onBriefDescChange}/>
 
-            <TaskDetailedDescriptionInput name="úplný popis úkolu" setTaskDetailedDescription={handleDetailedDescChange}/>
+            <TaskDetailedDescriptionInput name="úplný popis úkolu" onDetailedDescChange={onDetailedDescChange}/>
 
-            <TaskReferenceInput name="odkaz na stránku" setTaskReference={handleReferenceChange}/>
+            <TaskReferenceInput name="odkaz na stránku" onReferenceChange={onReferenceChange}/>
 
             <div style={{display: 'flex'}}>
             <div style={dateStyle}>
-                <TaskDateSubmissionInput name="Datum odevzdání:" setTaskDateSubmission={handleDateOfSubmissionChange}/>
+                <TaskDateSubmissionInput name="Datum odevzdání:" onDateOfSubmissionChange={onDateOfSubmissionChange}/>
             </div>
 
             <div style={dateStyle}>
-                <TaskDateFulfillmentInput name="Datum naplnění:" setTaskDateFulfillment={handleDateofFulfillmentChange}/>
+                <TaskDateFulfillmentInput name="Datum naplnění:" onDateofFulfillmentChange={onDateofFulfillmentChange}/>
                 </div>      
             </div>
         </div>

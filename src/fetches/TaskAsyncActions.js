@@ -43,9 +43,6 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
                                 dateOfEntry
                                 dateOfSubmission
                                 dateOfFulfillment
-                                event {
-                                    id
-                                }
                                 user {
                                     id
                                 }

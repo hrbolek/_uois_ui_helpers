@@ -1,8 +1,8 @@
 
 
-export const TaskDetailedDescriptionInput = ({name, setTaskDetailedDescription}) => {
+export const TaskDetailedDescriptionInput = ({name, onDetailedDescChange}) => {
     const handleChange = (event) => {
-      setTaskDetailedDescription(event.target.value)
+      onDetailedDescChange(event.target.value)
     }
   
     return (

@@ -8,6 +8,7 @@ import { HomeRadio } from 'components/HomeRadio';
 import { TryItComponent } from 'components/ComponentsToTry/TryItComponent';
 
 //import { TryItComponent } from 'components/ComponentsToTry/TryItComponent';
+import { ShowLabelButton } from 'components/ComponentsToTry/ShowLabelButton';
 
 /*
 function getData (id= "adde473d-5c78-4171-bf16-8e7f97bef5f9") {

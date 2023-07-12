@@ -1,7 +1,7 @@
 //creating a calendar
-export const TaskDateSubmissionInput = ({name, setTaskDateSubmission})=> {
+export const TaskDateSubmissionInput = ({name, onDateOfSubmissionChange})=> {
   const handleDateChanged = (event) => {
-    setTaskDateSubmission(event.target.value)
+    onDateOfSubmissionChange(event.target.value)
   }
 
     const today = new Date()
