@@ -5,6 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppProvider } from 'utils/store';
 
 import { HomeRadio } from 'components/HomeRadio';
+import { TryItComponent } from 'components/ComponentsToTry/TryItComponent';
+
+//import { TryItComponent } from 'components/ComponentsToTry/TryItComponent';
 import { ShowLabelButton } from 'components/ComponentsToTry/ShowLabelButton';
 
 /*
@@ -19,11 +22,13 @@ function App() {
   return (
     <div className="App">
       <AppProvider>
-          <HomeRadio />
+          <TryItComponent />
+
       </AppProvider>
       
     </div>
   );
+  //<TryItComponent/>
 }
       /*
       

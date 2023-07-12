@@ -12,9 +12,10 @@ const dateStyle = {
   }
   //eveeeeennnnts do commit
   //rename callbacks onNameChange
-export const TaskActiveInputs = ({setTask, task, actions}) => {
+export const TaskActiveInputs = ({setTask, task, actions}) => {  
+  //callbacks
     const onNameChange = (newName) => {
-        setTask({...task, name:newName})
+        setTask({...task, name:newName})                 
       }
     
       const onBriefDescChange = (newBriefDesc) => {
