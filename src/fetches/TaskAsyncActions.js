@@ -71,7 +71,7 @@ export const TaskAsyncInsert = (task) => (dispatch, getState) => {
         )
         .then(
             json => {
-                console.log(json)
+                console.log("weeee")
                 const msg = json.data.taskInsert.msg
                 if (msg === "fail") {
                     console.log("Insert selhalo")
