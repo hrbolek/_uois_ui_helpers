@@ -1,5 +1,5 @@
 
-export const TryItComponent = () => {
+/*export const TryItComponent = () => {
     return (
         <div>
 
@@ -10,6 +10,25 @@ export const TryItComponent = () => {
             <input name="pin" type="password" pattern="\d{4,4}" required/>
         </div>
         )
+};*/
+
+export const TryItComponent = () => {
+    const handleChange = () =>{
+
+    }
+    return (
+        <form>
+  <div>
+    <input
+      type="search"
+      id="mySearch"
+      name="q"
+      placeholder="Search the name..." 
+      aria-label="Search through site content" onChange={handleChange} />
+    <button>Search</button>
+  </div>
+</form>
+ )
 };
 
 
