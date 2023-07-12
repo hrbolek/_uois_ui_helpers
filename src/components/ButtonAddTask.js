@@ -14,8 +14,8 @@ export const ButtonAddTask = ({task, actions}) => {
     return (
         <div>
             <Button variant="primary" onClick={saveTask}>Uložit úkol</Button>
-            {taskStored && <label>✔</label>}
-            
+            {taskStored && <label style={{color:"green"}}>Úkol uložen✔</label>}
+
         </div>        
     
 
