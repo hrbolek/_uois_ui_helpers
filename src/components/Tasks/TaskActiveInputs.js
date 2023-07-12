@@ -11,9 +11,10 @@ const dateStyle = {
     backgroundColor: 'lightblue',
   }
   
-export const TaskActiveInputs = ({setTask, task}) => {
+export const TaskActiveInputs = ({setTask, task}) => {  
+  //callbacks
     const handleNameChange = (newName) => {
-        setTask({...task, name:newName})
+        setTask({...task, name:newName})                 
       }
     
       const handleBriefDescChange = (newBriefDesc) => {
