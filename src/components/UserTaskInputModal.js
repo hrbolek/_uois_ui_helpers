@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { UserTaskInputs } from './UserTaskInputs';
+import { ButtonAddTask } from './ButtonAddTask';
 
 
 
@@ -12,10 +13,7 @@ export const UserTaskInputModal = ({showModal, setModal, user, actions}) => {
     setNewTask({userId:user.id})
   };
 
-  const saveChanges = () => {
-    actions.addTask(newTask)
-    handleClose()
-  }
+
   //button should not take callBack, only params what and asyncAction (via actions props)
   return (
     <div>
@@ -28,7 +26,7 @@ export const UserTaskInputModal = ({showModal, setModal, user, actions}) => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Zavřít</Button>
-          <Button variant="primary" onClick={saveChanges}>Uložit úkol</Button>
+          <ButtonAddTask task={newTask} actions={actions}/>
         </Modal.Footer>
       </Modal>
     </div>

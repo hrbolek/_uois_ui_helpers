@@ -1,7 +1,7 @@
 //creating a calendar
-export const TaskDateFulfillmentInput = ({name, setTaskDateFulfillment})=> {
+export const TaskDateFulfillmentInput = ({name, onDateofFulfillmentChange})=> {
   const handleDateChanged = (event) => {
-    setTaskDateFulfillment(event.target.value)
+    onDateofFulfillmentChange(event.target.value)
   }
 
     const today = new Date()
