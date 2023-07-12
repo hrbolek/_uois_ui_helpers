@@ -1,4 +1,5 @@
-
+import { TextInput } from "components/TextInput";
+import { useState } from "react"
 /*export const TryItComponent = () => {
     return (
         <div>
@@ -11,24 +12,36 @@
         </div>
         )
 };*/
-
 export const TryItComponent = () => {
-    const handleChange = () =>{
+    const [isShown, setIsShown] = useState(false)
 
+    const handleChange = (event) =>{
+      const ObsahTextInputu = event.target.value
+      setIsShown(ObsahTextInputu)
     }
+
     return (
         <form>
   <div>
-    <input
+    <TextInput
+    placeholder = "vpište písmenko"
+    value = {null}
+    onChange = {handleChange}/>
+
+    {<label>{isShown}</label>}
+            
+    <button>Search</button>
+  </div>
+</form>
+
+ )
+};
+
+/*input
       type="search"
       id="mySearch"
       name="q"
       placeholder="Search the name..." 
-      aria-label="Search through site content" onChange={handleChange} />
-    <button>Search</button>
-  </div>
-</form>
- )
-};
+      aria-label="Search through site content" onChange={handleChange} />  */
 
 
