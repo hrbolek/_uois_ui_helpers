@@ -3,11 +3,11 @@ import { useState } from "react"
 import { Button } from "react-bootstrap"
 
 
-export const ButtonAddTask = ({task, actions}) => {
+export const ButtonAddTasks = ({group, task, actions}) => {
     const [taskStored, setTaskStored] = useState(false)
 
     const saveTask = () => {
-        actions.addTask(task)
+        actions.addTasks(group, task)
         setTaskStored(true)
     }
     

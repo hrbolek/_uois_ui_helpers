@@ -1,12 +1,14 @@
 import { TextInput } from "components/TextInput";
 import { useState } from "react"
 
-export const TryItComponent = () => {
+export const TryItComponent = ({task_id, actions}) => {
     const [isShown, setIsShown] = useState(false)
 
     const handleChange = (event) =>{
       const ObsahTextInputu = event.target.value
       setIsShown(ObsahTextInputu)
+  
+      
     }
 
     return (

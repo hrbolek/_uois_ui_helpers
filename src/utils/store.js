@@ -8,18 +8,7 @@ import { PartUsersFetch, UserTasksFetch } from 'fetches/UserAsyncActions'
 import { PartGroupsFetch, GroupMembershipsFetch } from 'fetches/GroupAsyncActions'
 import { TaskAsyncInsert } from 'fetches/TaskAsyncActions'
 
-const initialState = {
-    tasks: [
-        {
-            id: "123",
-            name: "prvni"
-        },
-        {
-            id: "456",
-            name: "druhy"
-        }
-    ]
-}
+
 
 
 
@@ -29,7 +18,6 @@ export const store = configureStore({
         tasks : taskReducer,
         groups: groupReducer
     },
-    //preloadedState: initialState
 })
 
 const dispatch = store.dispatch
@@ -41,7 +29,11 @@ export const actions = {
     partGroupsFetch: (letters) => dispatch(PartGroupsFetch(letters)),
     groupMembershipsFetch: (groupId) => dispatch(GroupMembershipsFetch(groupId)),
     addTask: (newTask) => dispatch(TaskAsyncInsert(newTask)),
-
+    addTasks: (group, task) => {
+        group?.memberships.map(member => (
+            dispatch(TaskAsyncInsert({...task, userId:member.user.id}))
+        ))
+    }
 }
 
 

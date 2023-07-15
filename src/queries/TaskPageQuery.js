@@ -11,8 +11,8 @@ export const TaskPageQueryJSON = () => ({
             id
             lastchange
             name
-            briefDesc
-            detailedDesc
+            briefDes
+            detailedDes
             reference
             dateOfEntry
             dateOfSubmission

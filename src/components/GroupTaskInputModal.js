@@ -1,23 +1,14 @@
 import { useState } from "react"
 import { GroupTaskInputs } from "./GroupTaskInputs"
 import { Button, Modal } from 'react-bootstrap';
+import { ButtonAddTasks } from "./ButtonAddTasks";
 
-export const GroupTaskInputModal = ({showModal, setModal, group, actions, memberships}) => {
+export const GroupTaskInputModal = ({showModal, setModal, group, actions}) => {
     const [newTask, setNewTask] = useState()
 
     const handleClose = () => {
         setModal(false)
         setNewTask()
-    }
-
-    const saveChanges = () => {
-        //for loop memberships, to newTask add {userId: member.id}, call actions.addTask(newTask)
-        
-        const iterTask = newTask
-        memberships.map(member => {
-            actions.addTask({...iterTask, userId:member.user.id})
-        })
-        handleClose()
     }
 
     return (
@@ -31,7 +22,7 @@ export const GroupTaskInputModal = ({showModal, setModal, group, actions, member
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>Zavřít</Button>
-            <Button variant="primary" onClick={saveChanges}>Uložit úkol</Button>
+            <ButtonAddTasks group={group} task={newTask} actions={actions}/>
           </Modal.Footer>
         </Modal>
       </div>

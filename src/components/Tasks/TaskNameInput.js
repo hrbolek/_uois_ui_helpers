@@ -1,5 +1,5 @@
 
-export const TaskNameInput = ({name, onNameChange}) => {
+export const TaskNameInput = ({name, onNameChange, task, actions}) => {
     const handleChange = (event) => {
       onNameChange(event.target.value)
     }
@@ -8,7 +8,7 @@ export const TaskNameInput = ({name, onNameChange}) => {
         <form>
           <div className="form-group">
             <small className="form-text text-muted">Zadejte {name}</small>
-            <input type="text" className="form-control"  placeholder="jméno úkolu" onChange={handleChange}/>
+            <input type="text" className="form-control" placeholder="jméno úkolu" onChange={handleChange}/>
           </div>
         </form>
     )
